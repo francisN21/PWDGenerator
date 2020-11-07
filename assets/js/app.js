@@ -11,7 +11,7 @@ el.addEventListener("mousemove", (e) => {
 let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 let emojis = [":)", ":(", ":-P", "xD", "UwU"];
 let specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
-let words = ["Happy", "sad", "angry", "surprised"];
+// let words = ["Happy", "sad", "angry", "surprised"];
 let possibles = [];
 
 // event listener to push to array 
@@ -30,8 +30,8 @@ document.getElementById('special').addEventListener('click', function () {
   console.log(possibles)
 });
 document.getElementById('words').addEventListener('click', function () {
-  possibles.push(words);
-  console.log(possibles)
+  // possibles.push(words);
+  // console.log(possibles)
 });
 
 console.log(possibles)
@@ -50,8 +50,8 @@ document.getElementById('generate').addEventListener('click', function () {
 console.log(pw);
 
 
-// Event listener to generate random word when generate button is clicked
-document.getElementById('generate').addEventListener('click', function () {
+// Event listener to generate random word when words button is clicked
+document.getElementById('words').addEventListener('click', function () {
 
   fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
     method: "GET",
@@ -69,9 +69,11 @@ document.getElementById('generate').addEventListener('click', function () {
       var randomWord = data.word
       // console log the generated word
       console.log(`Random Generated Word: ${randomWord}`)
+      possibles.push(randomWord)
+
 
       // put the word into the box
-      document.getElementById("pwd").innerHTML = data.word;
+      // document.getElementById("pwd").innerHTML = data.word;
 
 
       // Fetch request to find the word's rhyme
@@ -112,6 +114,9 @@ document.getElementById('generate').addEventListener('click', function () {
       var randomVerb = dataVerb.word
       // console log the Verb word
       console.log(`Random Generated Verb ${randomVerb}`)
+
+      possibles.push(randomVerb)
+
     })
 
 
@@ -134,6 +139,7 @@ document.getElementById('generate').addEventListener('click', function () {
       var randomNoun = dataNoun.word
       // console log the Noun word
       console.log(`Random Generated Noun: ${randomNoun}`)
+      possibles.push(randomNoun)
     })
 
   // Fetch request to get a random Adjective
@@ -155,7 +161,10 @@ document.getElementById('generate').addEventListener('click', function () {
       var randomAdjective = dataAdjective.word
       // console log the Adjectives word
       console.log(`Random Generated Adjective: ${randomAdjective}`)
+      possibles.push(randomAdjective)
+      console.log(possibles)
     })
+
 
 
 })
