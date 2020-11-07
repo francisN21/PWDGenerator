@@ -8,43 +8,163 @@ el.addEventListener("mousemove", (e) => {
 // temporary arrays so we can see results for password
 // words will be replaced by the api
 // will add figures of speech
-let num = [1,2,3,4,5,6,7,8,9,0];
+let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 let emojis = [":)", ":(", ":-P", "xD", "UwU"];
 let specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
-let words = ["Happy","sad","angry","surprised"];
+// let words = ["Happy", "sad", "angry", "surprised"];
 let possibles = [];
 
 // event listener to push to array 
-document.getElementById('num').addEventListener('click', function(){
+document.getElementById('num').addEventListener('click', function () {
   let pOut = `<button class="button is-info is-rounded" id="numX">num</button>`;
   possibles.push(num);
   console.log(possibles)
   document.getElementById("preset-Out").innerHTML = pOut;
 });
-document.getElementById('emoji').addEventListener('click', function(){
+document.getElementById('emoji').addEventListener('click', function () {
   possibles.push(emojis);
   console.log(possibles)
 });
-document.getElementById('special').addEventListener('click', function(){
+document.getElementById('special').addEventListener('click', function () {
   possibles.push(specialChar);
   console.log(possibles)
 });
-document.getElementById('words').addEventListener('click', function(){
-  possibles.push(words);
-  console.log(possibles)
+document.getElementById('words').addEventListener('click', function () {
+  // possibles.push(words);
+  // console.log(possibles)
 });
 
 console.log(possibles)
 let pw = [];
 // generate fetches the possibles array to create the password
 // lvl1 password generator - will add more complexity as it goes
-document.getElementById('generate').addEventListener('click', function(){
+document.getElementById('generate').addEventListener('click', function () {
   let ans = possibles;
-  for (let i=0; i < ans.length; i++){
+  for (let i = 0; i < ans.length; i++) {
     let rand = Math.floor(Math.random() * ans[i].length);
-              pw += possibles[i][rand];
+    pw += possibles[i][rand];
   }
   console.log(pw)
   document.getElementById("pwd").innerHTML = pw;
 });
 console.log(pw);
+
+
+// Event listener to generate random word when words button is clicked
+document.getElementById('words').addEventListener('click', function () {
+
+  fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
+    method: "GET",
+    redirect: "follow",
+    cache: "reload",
+    headers: {
+      "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
+      "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
+    }
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var randomWord = data.word
+      // console log the generated word
+      console.log(`Random Generated Word: ${randomWord}`)
+      possibles.push(randomWord)
+
+
+      // put the word into the box
+      // document.getElementById("pwd").innerHTML = data.word;
+
+
+      // Fetch request to find the word's rhyme
+
+      // fetch(`https://wordsapiv1.p.rapidapi.com/words/${randomWord}/rhymes`, {
+      //   method: "GET",
+      //   redirect: "follow",
+      //   cache: "reload",
+      //   headers: {
+      //     "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
+      //     "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
+      //   }
+      // })
+      //   .then(function (response) {
+      //     return (response.json());
+      //   })
+      //   .then(function (dataRhymes) {
+      //     console.log(dataRhymes.rhymes.all)
+      //   })
+
+    })
+
+
+  // Fetch request to get a random Verb
+  fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=verb&random=true", {
+    method: "GET",
+    redirect: "follow",
+    cache: "reload",
+    headers: {
+      "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
+      "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
+    }
+  })
+    .then(function (response) {
+      return (response.json());
+    })
+    .then(function (dataVerb) {
+      var randomVerb = dataVerb.word
+      // console log the Verb word
+      console.log(`Random Generated Verb ${randomVerb}`)
+
+      possibles.push(randomVerb)
+
+    })
+
+
+  // Fetch request to get a random Noun
+  fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=noun&random=true", {
+    method: "GET",
+    redirect: "follow",
+    cache: "reload",
+    headers: {
+      "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
+      "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
+    }
+  })
+    .then(function (response) {
+      return (response.json());
+    })
+    .then(function (dataNoun) {
+      // var nounArray = dataNoun.results.data
+      // console.log(nounArray)
+      var randomNoun = dataNoun.word
+      // console log the Noun word
+      console.log(`Random Generated Noun: ${randomNoun}`)
+      possibles.push(randomNoun)
+    })
+
+  // Fetch request to get a random Adjective
+  fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=adjective&random=true", {
+    method: "GET",
+    redirect: "follow",
+    cache: "reload",
+    headers: {
+      "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
+      "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
+    }
+  })
+    .then(function (response) {
+      return (response.json());
+    })
+    .then(function (dataAdjective) {
+      // var adjectiveArray = dataAdjective..results.data
+      // console.log(adjectiveArray)
+      var randomAdjective = dataAdjective.word
+      // console log the Adjectives word
+      console.log(`Random Generated Adjective: ${randomAdjective}`)
+      possibles.push(randomAdjective)
+      console.log(possibles)
+    })
+
+
+
+})
