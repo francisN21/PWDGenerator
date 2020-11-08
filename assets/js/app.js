@@ -49,7 +49,7 @@ document.getElementById('words').addEventListener('click', function () {
     })
     .then(function (dataNoun) {
       // var nounArray = dataNoun.results.data
-      // console.log(nounArray)
+      console.log(dataNoun)
 
       var randomN = dataNoun.word.split(" ");
       console.log(randomN)
