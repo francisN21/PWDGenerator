@@ -31,10 +31,11 @@ header,h3{
 }
 
 .checkbox{
-    display: block;
+    /* display: block; */
+    display:inline;
     margin-left: auto;
     margin-right: auto;
-    width: 8em;
+    width: 6em;
 
 }
 
@@ -48,6 +49,14 @@ header,h3{
     margin: 0 auto;
     max-width: 800px;
     padding: 30px 40px;
+    /* display: flex;
+
+
+  align-items: center;
+
+
+  justify-content: center; */
+
   }
 
   .card-header::after {
@@ -60,9 +69,21 @@ header,h3{
     float: left;
   }
 
+  .button{
+    margin-bottom: 10px;
+  }
+
   
   .card-footer::after {
     content: " ";
     display: block;
     clear: both;
+  }
+
+  #preset-Out .button{
+    background-color: orangered;
+  }
+
+  .section{
+   padding: 0px;
   }
