@@ -13,23 +13,35 @@ let emojis = ["😢", "💕", "🥺", "😉", "🥱", "😍", "😒", ""];
 let specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 let word1 = [];
 let possibles = [];
+let num1 = false;
+let emoji1 = false;
+let special1 = false;
 
 // event listener to push to array 
 document.getElementById('num').addEventListener('click', function () {
   let pOut = `<button class="button is-info is-rounded" id="numX">num</button>`;
   possibles.push(num);
-  console.log(possibles)
-  document.getElementById("preset-Out").innerHTML = pOut;
+  console.log(possibles);
+   if (num1 == false){
+  document.getElementById("preset-Out").innerHTML += pOut;
+  num1 = true;}
 });
 document.getElementById('emoji').addEventListener('click', function () {
   let pOut = `<button class="button is-info is-rounded" id="emojiX">emoji</button>`;
   possibles.push(emojis);
-  console.log(possibles)
-  document.getElementById("preset-Out").innerHTML = pOut;
+  console.log(possibles);
+  if (emoji1 == false){
+  document.getElementById("preset-Out").innerHTML += pOut;
+  emoji1 = true;}
 });
 document.getElementById('special').addEventListener('click', function () {
+  let pOut = `<button class="button is-info is-rounded" id="special">special</button>`;
   possibles.push(specialChar);
-  console.log(possibles)
+  console.log(possibles);
+  if (special1 == false){
+  document.getElementById("preset-Out").innerHTML += pOut;
+
+  special1 = true;}
 });
 document.getElementById('words').addEventListener('click', function () {
   // possibles.push(words);
