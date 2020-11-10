@@ -9,7 +9,7 @@ el.addEventListener("mousemove", (e) => {
 // words will be replaced by the api
 // will add figures of speech
 let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-let emojis = [":)", ":(", ":-P", "xD", "UwU"];
+let emojis = ["😢", "💕", "🥺", "😉", "🥱", "😍", "😒", ""];
 let specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 let word1 = [];
 let possibles = [];
@@ -97,6 +97,9 @@ document.getElementById('generate').addEventListener('click', function () {
   }
   document.getElementById("pwd").innerHTML = pw;
 });
+
+
+
 // console.log(pw);
 
 
