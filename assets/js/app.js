@@ -16,10 +16,11 @@ let possibles = [];
 let num1 = false;
 let emoji1 = false;
 let special1 = false;
+let words1 = false;
 
 // event listener to push to array 
 document.getElementById('num').addEventListener('click', function () {
-  let pOut = `<button class="button is-info is-rounded" id="numX">num</button>`;
+  let pOut = `<button class="button is-small is-info is-rounded" id="numX">num</button>`;
   possibles.push(num);
   console.log(possibles);
    if (num1 == false){
@@ -27,7 +28,7 @@ document.getElementById('num').addEventListener('click', function () {
   num1 = true;}
 });
 document.getElementById('emoji').addEventListener('click', function () {
-  let pOut = `<button class="button is-info is-rounded" id="emojiX">emoji</button>`;
+  let pOut = `<button class="button is-info is-small is-rounded" id="emojiX">emoji</button>`;
   possibles.push(emojis);
   console.log(possibles);
   if (emoji1 == false){
@@ -35,7 +36,7 @@ document.getElementById('emoji').addEventListener('click', function () {
   emoji1 = true;}
 });
 document.getElementById('special').addEventListener('click', function () {
-  let pOut = `<button class="button is-info is-rounded" id="special">special</button>`;
+  let pOut = `<button class="button is-info is-small is-rounded" id="special">special</button>`;
   possibles.push(specialChar);
   console.log(possibles);
   if (special1 == false){
@@ -46,6 +47,12 @@ document.getElementById('special').addEventListener('click', function () {
 document.getElementById('words').addEventListener('click', function () {
   // possibles.push(words);
   // console.log(possibles)
+  let pOut = `<button class="button is-info is-small is-rounded" id="words">words</button>`;
+  if (words1 == false){
+    document.getElementById("preset-Out").innerHTML += pOut;
+  
+    words1 = true;}
+
   let words = [];
   fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=noun&random=true", {
     method: "GET",
@@ -61,7 +68,7 @@ document.getElementById('words').addEventListener('click', function () {
     })
     .then(function (dataNoun) {
       // var nounArray = dataNoun.results.data
-      console.log(dataNoun)
+      // console.log("dataNoun is"  dataNoun)
 
       var randomN = dataNoun.word.split(" ");
       console.log(randomN)
@@ -74,9 +81,6 @@ document.getElementById('words').addEventListener('click', function () {
       console.log(word1)
     });
 });
-
-
-
 
 let pw = [];
 // generate fetches the possibles array to create the password
