@@ -25,6 +25,7 @@ document.getElementById('num').addEventListener('click', function () {
   console.log(possibles);
   if (num1 == false) {
     document.getElementById("preset-Out").innerHTML += pOut;
+    this.disabled = true;
     num1 = true;
   } else if (num1 && true) {
     document.getElementById("preset-Out").innerHTML += pOut;
@@ -38,6 +39,7 @@ document.getElementById('emoji').addEventListener('click', function () {
   console.log(possibles);
   if (emoji1 == false) {
     document.getElementById("preset-Out").innerHTML += pOut;
+    this.disabled = true;
     emoji1 = true;
   } else if (emoji1 && true) {
     document.getElementById("preset-Out").innerHTML += pOut;
@@ -51,6 +53,7 @@ document.getElementById('special').addEventListener('click', function () {
   console.log(possibles);
   if (special1 == false) {
     document.getElementById("preset-Out").innerHTML += pOut;
+    this.disabled = true;
 
     special1 = true;
   } else if (special1 && true) {
