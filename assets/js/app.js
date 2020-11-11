@@ -84,18 +84,44 @@ document.getElementById('reset').addEventListener('click', function () {
   // sets variables back to empty Array's
   var possibles = []
   var pOut = []
+  // set all selections to false
+  let num1 = false;
+  let emoji1 = false;
+  let special1 = false;
+  let words1 = false;
+  let noun1 = false;
+  let verb1 = false;
+  let adj1 = false;
+
   // clear's out the Buttons selected innerHTML
   document.querySelector("#preset-Out").innerHTML = pOut
   // Clear's out local storage
   localStorage.setItem("save", possibles);
   // Clear's out the password box text content
   document.querySelector("#pwd").textContent = ""
-  // set local storage selections back to false
-  localStorage.setItem("numbers", "false")
-  localStorage.setItem("emojis", "false")
-  localStorage.setItem("special", "false")
-  localStorage.setItem("words", "false")
-  // localStorage.setItem("adjectives", "")
-  // localStorage.setItem("nouns", "")
-  // localStorage.setItem("verbs", "")
+  // set local storage to of buttons to false
+  localStorage.setItem("numbers", num1)
+  localStorage.setItem("emojis", emoji1)
+  localStorage.setItem("special", special1)
+  localStorage.setItem("words", words1)
+  localStorage.setItem("nouns", noun1)
+  localStorage.setItem("verbs", verb1)
+  localStorage.setItem("adjectives", adj1)
+})
+
+// Save Button on Click Event to save the buttons selected and the password picked
+document.getElementById('save').addEventListener('click', function () {
+  // Saves possibles to local Storage
+  localStorage.setItem("save", possibles);
+
+  // set local storage to save the buttons pressed)
+  localStorage.setItem("numbers", num1)
+  localStorage.setItem("emojis", emoji1)
+  localStorage.setItem("special", special1)
+  localStorage.setItem("words", words1)
+  // Local Storage for Adj, Noun, and Verb
+  // localStorage.setItem("adjectives", adj1)
+  // localStorage.setItem("nouns", nouns1)
+  // localStorage.setItem("verbs", verbs1)
+
 })
