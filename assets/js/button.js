@@ -9,17 +9,22 @@ let nounBank = [];
 let adjBank = [];
 let verbBank = [];
 
+// let words1 = false;
+// let noun1 = false;
+// let verb1 = false;
+// let adj1 = false;
+
 // randomWord Button
 clickW.addEventListener('click', function () {
     let pOut = `<button class="button is-info is-small is-rounded" id="WordX">word</button>`;
     if (words1 == false) {
+      console.log("inside clickWord: " + words1);
+      
       document.getElementById("preset-Out").innerHTML += pOut;
-      words1 += true;
-    } else if (words1 && true) {
-        document.getElementById("preset-Out").innerHTML += pOut;
-        words1 += true;
-    };
-  
+      this.disabled = true;
+      words1 = true;
+    } 
+
   for (let i = 0; i < 10; i++){
     fetch("https://wordsapiv1.p.rapidapi.com/words/?lettersMin=4&lettersMax=8&random=true", {
       method: "GET",
@@ -56,12 +61,10 @@ clickV.addEventListener('click', function () {
     let pOut = `<button class="button is-info is-small is-rounded" id="verbX">Verb</button>`;
     if (verb1 == false) {
       document.getElementById("preset-Out").innerHTML += pOut;
+      this.disabled = true;
   
-      verb1 += true;
-    }else if (verb1 && true) {
-        document.getElementById("preset-Out").innerHTML += pOut;
-        verb1 += true;
-    };
+      verb1 = true;
+    }
   
   for (let i = 0; i < 10; i++){
     fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=verb&lettersMin=4&lettersMax=8&random=true", {
@@ -94,12 +97,10 @@ clickN.addEventListener('click', function () {
     let pOut = `<button class="button is-info is-small is-rounded" id="nounX">Noun</button>`;
     if (noun1 == false) {
       document.getElementById("preset-Out").innerHTML += pOut;
+      this.disabled = true;
   
-      noun1 += true;
-    }else if (noun1 && true) {
-        document.getElementById("preset-Out").innerHTML += pOut;
-        noun1 += true;
-    };
+      noun1 = true;
+    }
   
   for (let i = 0; i < 10; i++){
     fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=noun&lettersMin=4&lettersMax=8&random=true", {
@@ -133,12 +134,10 @@ clickA.addEventListener('click', function () {
     let pOut = `<button class="button is-info is-small is-rounded" id="adjX">Adjective</button>`;
     if (adj1 == false) {
       document.getElementById("preset-Out").innerHTML += pOut;
+      this.disabled = true;
   
       adj1 += true;
-    }else if (adj1 && true) {
-        document.getElementById("preset-Out").innerHTML += pOut;
-        adj1 += true;
-    };
+    }
   
   for (let i = 0; i < 10; i++){
     fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=noun&lettersMin=4&lettersMax=8&random=true", {
