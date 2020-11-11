@@ -13,7 +13,7 @@ let specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", "
 let wordBank = [];
 let nounBank = [];
 let adjBank = [];
-let verb = [];
+let verbBank = [];
 
 // placeholder for the chosen category
 let possibles = [];
@@ -23,6 +23,8 @@ let num1 = false;
 let emoji1 = false;
 let special1 = false;
 let words1 = false;
+let noun1 = false;
+let verb1 = false;
 
 
 
