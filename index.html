@@ -30,41 +30,20 @@
 
 
         <div class="card">
-
-
             <div class="container">
                 <div class="checkbox">
                     <p class="is-size-5">Options</p>
                     <br>
-                    <button class="button is-small is-info is-rounded" id="num">
-                        numbers</button>
-
-
-                    <button class="button is-small is-info is-rounded" id="emoji">
-                        emojis</button>
-
-
-                    <button class="button is-small is-info is-rounded" id="special">
-                        special</button>
-
-                    <button class="button is-small is-info is-rounded" id="words">
-                        words</button>
-                    <button class="button is-info is-small is-rounded">Adjective</button>
-                    <button class="button is-info is-small is-rounded">Noun</button>
-                    <button class="button is-info is-small is-rounded">Verb</button>
+                    <button class="button is-small is-info is-rounded" id="num">Numbers</button>
+                    <button class="button is-small is-info is-rounded" id="emoji">Emojis</button>
+                    <button class="button is-small is-info is-rounded" id="special">Special</button>
+                    <button class="button is-small is-info is-rounded" id="words">Word</button>
+                    <button class="button is-info is-small is-rounded" id="adjective">Adjective</button>
+                    <button class="button is-info is-small is-rounded" id="noun">Noun</button>
+                    <button class="button is-info is-small is-rounded" id="verb">Verb</button>
                 </div>
 
             </div>
-            <!-- </div>
-    </div> -->
-
-
-
-            <div id="preset-Out">
-
-
-            </div>
-
             <div class="checkbox">
                 <p class="is-size-5">Presets</p>
                 <br>
@@ -85,11 +64,20 @@
                     Instagram</button>
 
 
+                <div class="container">
+                    <p>Structure:</p>
+                    <div id="preset-Out" class="structureA">
+                        <!-- this is where the password structure appends -->
+                    </div>
+                    <button class="button is-danger" id="reset">reset</button>
+                </div>
+
+
                 <div class="card-body">
                     <section class="section">
                         <div class="container">
                             <div class="column">
-                                <textarea readonly id="pwd" placeholder="New Password Here"
+                                <textarea readonly id="pwd" placeholder="Please select from the category"
                                     aria-label="Generated Password">
                                                 </textarea>
                             </div>
@@ -113,29 +101,36 @@
 
 
             <section class="section">
-                <div class="column is-12-tablet is-12-desktop is-12-fullhd">
-                    <div class="card strength-bar">
+                <div class="column is-12-tablet is-12-desktop is-12-full-hd">
+                    <div class="card">
                         <div class="card-content">
                             <div class="column">
                                 <h2 class="title is-4"> New Password</h2>
                                 <br>
-                                <textarea readonly id="pwd" placeholder="New Password Here"
+                                <textarea readonly id="pwd" class="strength" placeholder="New Password Here"
                                     aria-label="Generated Password">
                                     </textarea>
                                 <button class="button is-danger is-rounded is-small" id="generate">Generate</button>
                                 <button class="button is-danger is-rounded is-small" id="test">Test Password</button>
                             </div>
-
+                            <div id="password-strength-bar">
+                                <div id="password-bar"></div>
+                            </div>
                         </div>
-
+                        <div>
+                            <button class="button is-danger is-rounded is-small" id="save">Save</button>
+                            <button class="button is-danger is-rounded is-small" id="load">Load</button>
+                            <button class="button is-danger is-rounded is-small" id="clear">Clear</button>
+                        </div>
                     </div>
-
-
-                    <!-- <p>hello</p> -->
                 </div>
         </div>
 
         <script src="./assets/js/app.js"></script>
+        <script src="./assets/js/button.js"></script>
+        <script src="./assets/js/passStrength.js"></script>
+        <script src="./assets/js/JSstyle.js"></script>
+
 </body>
 
 </html>
