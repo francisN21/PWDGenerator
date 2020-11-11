@@ -106,7 +106,7 @@ document.getElementById('generate').addEventListener('click', function () {
 
 document.getElementById('test').addEventListener('click', function () {
   // Temporary password for testing
-  var password = "hiFrancisco"
+  var password = "HiEveryone!"
 
   // add to the event of clicking the test button
   // document.getElementById('test').addEventListener('click', function () {
@@ -140,20 +140,33 @@ document.getElementById('test').addEventListener('click', function () {
       console.log(`Your password is rated ${passScore} out of 5, and would take ${passTimeToGuess} seconds to guess`)
       // if password score is between 0 & 2 turn background Red
       if (passScore >= 0 && passScore < 2) {
-        document.getElementByClass("strength-one").style.background = "red";
+        document.querySelector("#password-strength-bar").style.border = "thin solid #000000"
+        document.querySelector("#password-bar").style.background = "red";
+        document.querySelector("#password-bar").style.border = "thin solid #000000"
+        document.querySelector("#password-bar").style.width = "33%";
+        document.querySelector("#password-bar").textContent = "Low Strength"
       }
-      // if password score is between 2 & 3 turn background Yellow
+      // if password score is between 2 & 3 turn background Yellow#password-bar
       if (passScore >= 2 && passScore < 3) {
-        document.getElementByClass("strength-one").style.background = "yellow";
-        document.getElementByClass("strength-two").style.background = "yellow";
+        document.querySelector("#password-strength-bar").style.border = "thin solid #000000"
+        document.querySelector("#password-bar").style.background = "yellow";
+        document.querySelector("#password-bar").style.border = " thin solid #000000"
+        document.querySelector("#password-bar").style.width = "66%";
+        document.querySelector("#password-bar").textContent = "Medium Strength"
       }
       // if password score is between 4 & 5 turn background Green
       if (passScore >= 4 && passScore < 5) {
-        document.getElementByClass("strength-one").style.background = "green";
-        document.getElementByClass("strength-two").style.background = "green";
-        document.getElementByClass("strength-three").style.background = "green";
+        document.querySelector("#password-strength-bar").style.border = "thin solid #000000"
+        document.querySelector("#password-bar").style.background = "green";
+        document.querySelector("#password-bar").style.border = " thin solid #000000"
+        document.querySelector("#password-bar").style.width = "100%";
+        document.querySelector("#password-bar").textContent = "High Strength"
+
       }
     })
+
+
+
     // Catch any Error from the API
     .catch(err => {
       console.error(err);
