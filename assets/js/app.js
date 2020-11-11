@@ -79,3 +79,23 @@ document.getElementById('generate').addEventListener('click', function () {
 });
 
 
+// Clear Button on Click Event to clear the buttons selected and the password picked
+document.getElementById('reset').addEventListener('click', function () {
+  // sets variables back to empty Array's
+  var possibles = []
+  var pOut = []
+  // clear's out the Buttons selected innerHTML
+  document.querySelector("#preset-Out").innerHTML = pOut
+  // Clear's out local storage
+  localStorage.setItem("save", possibles);
+  // Clear's out the password box text content
+  document.querySelector("#pwd").textContent = ""
+  // set local storage selections back to false
+  localStorage.setItem("numbers", "false")
+  localStorage.setItem("emojis", "false")
+  localStorage.setItem("special", "false")
+  localStorage.setItem("words", "false")
+  // localStorage.setItem("adjectives", "")
+  // localStorage.setItem("nouns", "")
+  // localStorage.setItem("verbs", "")
+})
