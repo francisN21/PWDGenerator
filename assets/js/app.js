@@ -6,19 +6,29 @@ el.addEventListener("mousemove", (e) => {
 });
 
 // temporary arrays so we can see results for password
-// words will be replaced by the api
-// will add figures of speech
 let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 let emojis = ["😢", "💕", "🥺", "😉", "🥱", "😍", "😒", ""];
 let specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
-let word1 = [];
+// api fetched arrays
+let wordBank = [];
+let nounBank = [];
+let adjBank = [];
+let verb = [];
+
+// placeholder for the chosen category
 let possibles = [];
+
+// add here
 let num1 = false;
 let emoji1 = false;
 let special1 = false;
 let words1 = false;
 
+
+
+
 // event listener to push to array 
+// Number button
 document.getElementById('num').addEventListener('click', function () {
   let pOut = `<button class="button is-small is-info is-rounded" id="numX">num</button>`;
   possibles.push(num);
@@ -28,6 +38,7 @@ document.getElementById('num').addEventListener('click', function () {
     num1 = true;
   }
 });
+// emoji button
 document.getElementById('emoji').addEventListener('click', function () {
   let pOut = `<button class="button is-info is-small is-rounded" id="emojiX">emoji</button>`;
   possibles.push(emojis);
@@ -37,6 +48,7 @@ document.getElementById('emoji').addEventListener('click', function () {
     emoji1 = true;
   }
 });
+// specialC Button
 document.getElementById('special').addEventListener('click', function () {
   let pOut = `<button class="button is-info is-small is-rounded" id="special">special</button>`;
   possibles.push(specialChar);
@@ -47,45 +59,10 @@ document.getElementById('special').addEventListener('click', function () {
     special1 = true;
   }
 });
-document.getElementById('words').addEventListener('click', function () {
-  // possibles.push(words);
-  // console.log(possibles)
-  let pOut = `<button class="button is-info is-small is-rounded" id="words">words</button>`;
-  if (words1 == false) {
-    document.getElementById("preset-Out").innerHTML += pOut;
 
-    words1 = true;
-  }
 
-  let words = [];
-  fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=noun&random=true", {
-    method: "GET",
-    redirect: "follow",
-    cache: "reload",
-    headers: {
-      "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
-      "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
-    }
-  })
-    .then(function (response) {
-      return (response.json());
-    })
-    .then(function (dataNoun) {
-      // var nounArray = dataNoun.results.data
-      // console.log("dataNoun is"  dataNoun)
 
-      var randomN = dataNoun.word.split(" ");
-      console.log(randomN)
-      // console log the Noun word
-      var randomNoun = randomN;
-      console.log(`Random Generated Noun: ${randomNoun}`)
-      words.push(randomN.join(""));
-      word1.push(words);
-      possibles.push(word1)
-      console.log(word1)
-    });
-});
-
+// placeholder for the generated password
 let pw = [];
 // generate fetches the possibles array to create the password
 // lvl1 password generator - will add more complexity as it goes
@@ -93,10 +70,10 @@ document.getElementById('generate').addEventListener('click', function () {
   let ans = possibles;
 
 
-  console.log("this is ans" + ans)
-  for (let i = 0; i < ans.length; i++) {
-    let rand = Math.floor(Math.random() * ans[i].length);
-    pw += possibles[i][rand];
+  console.log("Generated password: " + ans)
+  for (let x = 0; x < ans.length; x++) {
+    let rand = Math.floor(Math.random() * ans[x].length);
+    pw += possibles[x][rand];
     console.log(possibles)
   }
   document.getElementById("pwd").innerHTML = pw;
@@ -185,27 +162,27 @@ document.getElementById('test').addEventListener('click', function () {
 //       possibles.push(randomWord)
 
 
-//       // put the word into the box
-//       // document.getElementById("pwd").innerHTML = data.word;
+      // put the word into the box
+      // document.getElementById("pwd").innerHTML = data.word;
 
 
-//       // Fetch request to find the word's rhyme
+      // Fetch request to find the word's rhyme
 
-//       // fetch(`https://wordsapiv1.p.rapidapi.com/words/${randomWord}/rhymes`, {
-//       //   method: "GET",
-//       //   redirect: "follow",
-//       //   cache: "reload",
-//       //   headers: {
-//       //     "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
-//       //     "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
-//       //   }
-//       // })
-//       //   .then(function (response) {
-//       //     return (response.json());
-//       //   })
-//       //   .then(function (dataRhymes) {
-//       //     console.log(dataRhymes.rhymes.all)
-//       //   })
+      // fetch(`https://wordsapiv1.p.rapidapi.com/words/${randomWord}/rhymes`, {
+      //   method: "GET",
+      //   redirect: "follow",
+      //   cache: "reload",
+      //   headers: {
+      //     "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
+      //     "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
+      //   }
+      // })
+      //   .then(function (response) {
+      //     return (response.json());
+      //   })
+      //   .then(function (dataRhymes) {
+      //     console.log(dataRhymes.rhymes.all)
+      //   })
 
 //     })
 
