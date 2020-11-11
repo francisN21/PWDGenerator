@@ -1,10 +1,3 @@
-const el = document.querySelector("#module");
-
-el.addEventListener("mousemove", (e) => {
-  el.style.backgroundPositionX = -e.offsetX + "px";
-  el.style.backgroundPositionY = -e.offsetY + "px";
-});
-
 // temporary arrays so we can see results for password
 let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 let emojis = ["😢", "💕", "🥺", "😉", "🥱", "😍", "😒", ""];
@@ -25,6 +18,7 @@ let special1 = false;
 let words1 = false;
 let noun1 = false;
 let verb1 = false;
+let adj1 = false;
 
 
 
