@@ -71,7 +71,7 @@ document.getElementById('words').addEventListener('click', function () {
       // console.log("dataNoun is"  dataNoun)
 
       var randomN = dataNoun.word.split(" ");
-      console.log(randomN)
+      console.log("randomNoun:" + randomN)
       // console log the Noun word
       var randomNoun = randomN;
       console.log(`Random Generated Noun: ${randomNoun}`)
@@ -89,7 +89,7 @@ document.getElementById('generate').addEventListener('click', function () {
   let ans = possibles;
 
 
-  console.log("this is ans" + ans)
+  console.log("this is ans:   " + ans)
   for (let i = 0; i < ans.length; i++) {
     let rand = Math.floor(Math.random() * ans[i].length);
     pw += possibles[i][rand];
