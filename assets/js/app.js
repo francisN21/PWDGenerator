@@ -32,7 +32,10 @@ document.getElementById('num').addEventListener('click', function () {
   if (num1 == false) {
     document.getElementById("preset-Out").innerHTML += pOut;
     num1 = true;
-  }
+  }else if (num1 && true) {
+    document.getElementById("preset-Out").innerHTML += pOut;
+    num1 += true;
+};
 });
 // emoji button
 document.getElementById('emoji').addEventListener('click', function () {
@@ -42,7 +45,10 @@ document.getElementById('emoji').addEventListener('click', function () {
   if (emoji1 == false) {
     document.getElementById("preset-Out").innerHTML += pOut;
     emoji1 = true;
-  }
+  }else if (emoji1 && true) {
+    document.getElementById("preset-Out").innerHTML += pOut;
+    emoji1 += true;
+};
 });
 // specialC Button
 document.getElementById('special').addEventListener('click', function () {
@@ -53,7 +59,10 @@ document.getElementById('special').addEventListener('click', function () {
     document.getElementById("preset-Out").innerHTML += pOut;
 
     special1 = true;
-  }
+  }else if (special1 && true) {
+    document.getElementById("preset-Out").innerHTML += pOut;
+    special1 += true;
+};
 });
 
 

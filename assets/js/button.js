@@ -10,7 +10,7 @@ clickW.addEventListener('click', function () {
     if (words1 == false) {
       document.getElementById("preset-Out").innerHTML += pOut;
       words1 += true;
-    } else if (words1 == true) {
+    } else if (words1 && true) {
         document.getElementById("preset-Out").innerHTML += pOut;
         words1 += true;
     };
@@ -53,7 +53,10 @@ clickV.addEventListener('click', function () {
       document.getElementById("preset-Out").innerHTML += pOut;
   
       verb1 += true;
-    }
+    }else if (verb1 && true) {
+        document.getElementById("preset-Out").innerHTML += pOut;
+        verb1 += true;
+    };
   
   for (let i = 0; i < 10; i++){
     fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=verb&lettersMin=4&lettersMax=8&random=true", {
@@ -88,7 +91,10 @@ clickN.addEventListener('click', function () {
       document.getElementById("preset-Out").innerHTML += pOut;
   
       noun1 += true;
-    }
+    }else if (noun1 && true) {
+        document.getElementById("preset-Out").innerHTML += pOut;
+        noun1 += true;
+    };
   
   for (let i = 0; i < 10; i++){
     fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=noun&lettersMin=4&lettersMax=8&random=true", {
@@ -104,7 +110,7 @@ clickN.addEventListener('click', function () {
         return (response.json());
       })
       .then(function (dataNoun) {
-        let randomN = dataNoun.word.split(" ");
+        let randomN = dataNoun.word;
         let upper = randomN[0].toUpperCase() + randomN.slice(1);
         let combine = upper.split(' ');
         nounBank.push(combine.join(""));
@@ -124,7 +130,10 @@ clickA.addEventListener('click', function () {
       document.getElementById("preset-Out").innerHTML += pOut;
   
       adj1 += true;
-    }
+    }else if (adj1 && true) {
+        document.getElementById("preset-Out").innerHTML += pOut;
+        adj1 += true;
+    };
   
   for (let i = 0; i < 10; i++){
     fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=noun&lettersMin=4&lettersMax=8&random=true", {
@@ -140,7 +149,7 @@ clickA.addEventListener('click', function () {
         return (response.json());
       })
       .then(function (dataAdj) {
-        let randomA = dataAdj.word.split(" ");
+        let randomA = dataAdj.word;
         let upper = randomA[0].toUpperCase() + randomA.slice(1);
         let combine = upper.split(' ');
         adjBank.push(combine.join(""));
