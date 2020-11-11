@@ -34,35 +34,16 @@
                 <div class="checkbox">
                     <p class="is-size-5">Options</p>
                     <br>
-                    <button class="button is-small is-info is-rounded" id="num">
-                        numbers</button>
-
-
-                    <button class="button is-small is-info is-rounded" id="emoji">
-                        emojis</button>
-
-
-                    <button class="button is-small is-info is-rounded" id="special">
-                        special</button>
-
-                    <button class="button is-small is-info is-rounded" id="words">
-                        words</button>
-                    <button class="button is-info is-small is-rounded">Adjective</button>
-                    <button class="button is-info is-small is-rounded">Noun</button>
-                    <button class="button is-info is-small is-rounded">Verb</button>
+                    <button class="button is-small is-info is-rounded" id="num">Numbers</button>
+                    <button class="button is-small is-info is-rounded" id="emoji">Emojis</button>
+                    <button class="button is-small is-info is-rounded" id="special">Special</button>
+                    <button class="button is-small is-info is-rounded" id="words">Word</button>
+                    <button class="button is-info is-small is-rounded" id="adjective">Adjective</button>
+                    <button class="button is-info is-small is-rounded" id="noun">Noun</button>
+                    <button class="button is-info is-small is-rounded" id="verb">Verb</button>
                 </div>
 
             </div>
-            <!-- </div>
-    </div> -->
-
-
-
-            <div id="preset-Out">
-
-
-            </div>
-
             <div class="checkbox">
                 <p class="is-size-5">Presets</p>
                 <br>
@@ -83,11 +64,20 @@
                     Instagram</button>
 
 
+                <div class="container">
+                    <p>Structure:</p>
+                    <div id="preset-Out" class="structureA">
+                        <!-- this is where the password structure appends -->
+                    </div>
+                    <button class="button is-danger" id="reset">reset</button>
+                </div>
+
+
                 <div class="card-body">
                     <section class="section">
                         <div class="container">
                             <div class="column">
-                                <textarea readonly id="pwd" placeholder="New Password Here"
+                                <textarea readonly id="pwd" placeholder="Please select from the category"
                                     aria-label="Generated Password">
                                                 </textarea>
                             </div>
