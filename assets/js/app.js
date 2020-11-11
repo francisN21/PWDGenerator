@@ -23,35 +23,39 @@ document.getElementById('num').addEventListener('click', function () {
   let pOut = `<button class="button is-small is-info is-rounded" id="numX">num</button>`;
   possibles.push(num);
   console.log(possibles);
-   if (num1 == false){
-  document.getElementById("preset-Out").innerHTML += pOut;
-  num1 = true;}
+  if (num1 == false) {
+    document.getElementById("preset-Out").innerHTML += pOut;
+    num1 = true;
+  }
 });
 document.getElementById('emoji').addEventListener('click', function () {
   let pOut = `<button class="button is-info is-small is-rounded" id="emojiX">emoji</button>`;
   possibles.push(emojis);
   console.log(possibles);
-  if (emoji1 == false){
-  document.getElementById("preset-Out").innerHTML += pOut;
-  emoji1 = true;}
+  if (emoji1 == false) {
+    document.getElementById("preset-Out").innerHTML += pOut;
+    emoji1 = true;
+  }
 });
 document.getElementById('special').addEventListener('click', function () {
   let pOut = `<button class="button is-info is-small is-rounded" id="special">special</button>`;
   possibles.push(specialChar);
   console.log(possibles);
-  if (special1 == false){
-  document.getElementById("preset-Out").innerHTML += pOut;
+  if (special1 == false) {
+    document.getElementById("preset-Out").innerHTML += pOut;
 
-  special1 = true;}
+    special1 = true;
+  }
 });
 document.getElementById('words').addEventListener('click', function () {
   // possibles.push(words);
   // console.log(possibles)
   let pOut = `<button class="button is-info is-small is-rounded" id="words">words</button>`;
-  if (words1 == false){
+  if (words1 == false) {
     document.getElementById("preset-Out").innerHTML += pOut;
-  
-    words1 = true;}
+
+    words1 = true;
+  }
 
   let words = [];
   fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=noun&random=true", {
@@ -99,6 +103,62 @@ document.getElementById('generate').addEventListener('click', function () {
 });
 
 
+
+document.getElementById('test').addEventListener('click', function () {
+  // Temporary password for testing
+  var password = "hiFrancisco"
+
+  // add to the event of clicking the test button
+  // document.getElementById('test').addEventListener('click', function () {
+
+  // fetch request
+  fetch("https://password-checker.p.rapidapi.com/password/evaluate", {
+    "method": "POST",
+    "headers": {
+      "content-type": "application/json",
+      "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
+      "x-rapidapi-host": "password-checker.p.rapidapi.com"
+    },
+    // stringify the data
+    "body": JSON.stringify({
+      // user's password here is sent to the API
+      "password": `${password}`
+    })
+  })
+    // get response from the API request
+    .then(response => {
+      return response.json()
+    })
+    // get the json data from the API and set to variable dataPassword
+    .then(function (dataPassword) {
+      // console log the data from the API
+      console.log(dataPassword)
+      // set variable for password Score (ranked 1-5; with 5 being great)
+      var passScore = dataPassword.score
+      // set variable for time to guess the password in seconds
+      var passTimeToGuess = dataPassword.timeToGuessInSeconds
+      console.log(`Your password is rated ${passScore} out of 5, and would take ${passTimeToGuess} seconds to guess`)
+      // if password score is between 0 & 2 turn background Red
+      if (passScore >= 0 && passScore < 2) {
+        document.getElementByClass("strength-one").style.background = "red";
+      }
+      // if password score is between 2 & 3 turn background Yellow
+      if (passScore >= 2 && passScore < 3) {
+        document.getElementByClass("strength-one").style.background = "yellow";
+        document.getElementByClass("strength-two").style.background = "yellow";
+      }
+      // if password score is between 4 & 5 turn background Green
+      if (passScore >= 4 && passScore < 5) {
+        document.getElementByClass("strength-one").style.background = "green";
+        document.getElementByClass("strength-two").style.background = "green";
+        document.getElementByClass("strength-three").style.background = "green";
+      }
+    })
+    // Catch any Error from the API
+    .catch(err => {
+      console.error(err);
+    })
+})
 
 // console.log(pw);
 
@@ -218,3 +278,19 @@ document.getElementById('generate').addEventListener('click', function () {
 //       console.log(possibles)
 //     })
 // })
+
+
+// Thomas' Password Checker API:
+// ERROR: from origin 'null' has been blocked by CORS policy: 
+// No 'Access-Control-Allow-Origin' header is present on the requested resource. 
+// If an opaque response serves your needs, set the request's mode to 'no-cors' 
+// to fetch the resource with CORS disabled.
+
+// var passwordTest = "hiEveryone"
+// fetch(`https://password-check-api.herokuapp.com/check/${passwordTest}`)
+//   .then(function (resp) {
+//     return resp.json();
+//   })
+//   .then(function (response) {
+//     console.log(response);
+//   })
