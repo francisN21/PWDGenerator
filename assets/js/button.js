@@ -4,6 +4,11 @@ let clickN = document.getElementById('noun');
 let clickA = document.getElementById('adjective');
 let clickDefault = document.getElementById('default');
 
+let wordBank = [];
+let nounBank = [];
+let adjBank = [];
+let verbBank = [];
+
 // randomWord Button
 clickW.addEventListener('click', function () {
     let pOut = `<button class="button is-info is-small is-rounded" id="WordX">word</button>`;
