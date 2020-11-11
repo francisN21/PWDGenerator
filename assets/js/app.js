@@ -147,7 +147,7 @@ document.getElementById('test').addEventListener('click', function () {
         document.querySelector("#password-bar").textContent = "Low Strength"
       }
       // if password score is between 2 & 3 turn background Yellow#password-bar
-      if (passScore >= 2 && passScore < 3) {
+      if (passScore >= 2 && passScore < 4) {
         document.querySelector("#password-strength-bar").style.border = "thin solid #000000"
         document.querySelector("#password-bar").style.background = "yellow";
         document.querySelector("#password-bar").style.border = " thin solid #000000"
