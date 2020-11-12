@@ -3,13 +3,13 @@
 // Click Test to test the password
 document.getElementById('test').addEventListener('click', function () {
     // Temporary password for testing
-    var passwordTest = "GxVbares1000"
+
 
     // fetch request using Thomas' API, thank you Thomas! 
     const corsAll = "https://cors-anywhere.herokuapp.com/"
 
     //   Fetch Request setting the URl to the password to be checked
-    fetch(corsAll + `https://password-check-api.herokuapp.com/check/${passwordTest}`)
+    fetch(corsAll + `https://password-check-api.herokuapp.com/check/${pw}`)
         // return JSON
         .then(res => res.json())
         //   Get the Data
@@ -55,7 +55,11 @@ document.getElementById('test').addEventListener('click', function () {
 // Load button on Click Event to reload buttons selected
 document.getElementById('load').addEventListener('click', function () {
     // Gets possibles from local storage
-    var load = localStorage.getItem("save", possibles);
+    // Sets the possibles array back from localStorage
+    localStorage.getItem("possibles", possibles)
+    console.log(possibles)
+    // gets the saved pw back from local storage
+    var load = localStorage.getItem("save", pw);
     // set the pwd box text contents to the password saved
     document.querySelector("#pwd").textContent = load
 

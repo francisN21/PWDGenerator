@@ -91,6 +91,7 @@ document.getElementById('reset').addEventListener('click', function () {
   verb1 = false;
   adj1 = false;
 
+
   // clear's out the Buttons selected innerHTML
   document.querySelector("#preset-Out").innerHTML = pOut
   // Clear's out local storage
@@ -105,6 +106,7 @@ document.getElementById('reset').addEventListener('click', function () {
   localStorage.setItem("nouns", noun1)
   localStorage.setItem("verbs", verb1)
   localStorage.setItem("adjectives", adj1)
+  localStorage.setItem("possibles", possibles)
 
 
   //  Makes all the buttons in Options selectable again. Doesn't check if any 
@@ -120,15 +122,17 @@ document.getElementById('reset').addEventListener('click', function () {
 
   // Removes the bottom password strength bar left over from previous run
   // There is another way to set the attributes using this.setAttribute but I used this way
-       document.querySelector("#password-bar").innerHTML= ""
-      document.querySelector("#password-bar").style = ""
-      document.querySelector("#password-strength-bar").style = ""
+  document.querySelector("#password-bar").innerHTML = ""
+  document.querySelector("#password-bar").style = ""
+  document.querySelector("#password-strength-bar").style = ""
 })
 
 // Save Button on Click Event to save the buttons selected and the password picked
 document.getElementById('save').addEventListener('click', function () {
   // Saves possibles to local Storage
-  localStorage.setItem("save", possibles);
+  localStorage.setItem("possibles", possibles)
+  // Save generated Password to localStorage 
+  localStorage.setItem("save", pw);
 
   // set local storage to save the buttons pressed)
   localStorage.setItem("numbers", num1)
