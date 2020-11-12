@@ -42,7 +42,7 @@ clickW.addEventListener('click', function () {
         let combine = upper.split(' ');
         // pushes the words to the wordbank as one word
         wordBank.push(combine.join(''));
-        console.log(wordBank)
+        console.log("wordBank:" + wordBank)
       })
   }
   // pushes the bank to the generate array

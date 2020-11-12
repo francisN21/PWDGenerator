@@ -117,6 +117,12 @@ document.getElementById('reset').addEventListener('click', function () {
   document.getElementById('noun').disabled = false;
   document.getElementById('verb').disabled = false;
 
+
+  // Removes the bottom password strength bar left over from previous run
+  // There is another way to set the attributes using this.setAttribute but I used this way
+       document.querySelector("#password-bar").innerHTML= ""
+      document.querySelector("#password-bar").style = ""
+      document.querySelector("#password-strength-bar").style = ""
 })
 
 // Save Button on Click Event to save the buttons selected and the password picked
