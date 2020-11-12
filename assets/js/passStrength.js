@@ -52,5 +52,67 @@ document.getElementById('test').addEventListener('click', function () {
 })
 
 
+// Load button on Click Event to reload buttons selected
+document.getElementById('load').addEventListener('click', function () {
+    // Gets possibles from local storage
+    var load = localStorage.getItem("save", possibles);
+    // set the pwd box text contents to the password saved
+    document.querySelector("#pwd").textContent = load
+
+    // set variables to get the local storage values
+    let numbersStor = localStorage.getItem("numbers")
+    let emojiStor = localStorage.getItem("emojis")
+    let specialStor = localStorage.getItem("special")
+    let verbStor = localStorage.getItem("verbs")
+    let wordsStor = localStorage.getItem("words")
+    let nounStor = localStorage.getItem("nouns")
+    let adjStor = localStorage.getItem("adjectives")
+
+    // console.log to check the values
+    // console.log(numbersStor)
+    // console.log(emojiStor)
+    // console.log(specialStor)
+    // console.log(verbStor)
+    // console.log(wordsStor)
+    // console.log(nounStor)
+    // console.log(adjStor)
 
 
+    // If statement to see if local storage is True for the Button, then if so, put the button back on the screen
+    // If statement to check if numbers were saved
+    if (numbersStor == "true") {
+        // console.log("NumbersStore is true")
+        document.getElementById("preset-Out").innerHTML += `<button class="button is-small is-info is-rounded" id="numX">num</button>`;
+    }
+    // If statement to check if emojis were saved
+    if (emojiStor == "true") {
+        // console.log("EmojiStor is true")
+        document.getElementById("preset-Out").innerHTML += `<button class="button is-info is-small is-rounded" id="emojiX">emoji</button>`;
+    }
+    // If statement to check if special Characters were saved
+    if (specialStor == "true") {
+        // console.log("SpecialStor is true")
+        document.getElementById("preset-Out").innerHTML += `<button class="button is-info is-small is-rounded" id="special">special</button>`;
+    }
+    // If statement to check if verbs were saved
+    if (verbStor == "true") {
+        // console.log("Verbs are true")
+        document.getElementById("preset-Out").innerHTML += `<button class="button is-info is-small is-rounded" id="verbX">Verb</button>`;
+    }
+    // If statement to check if random words were saved
+    if (wordsStor == "true") {
+        // console.log("WordStor is true")
+        document.getElementById("preset-Out").innerHTML += `<button class="button is-info is-small is-rounded" id="WordX">word</button`;
+    }
+    // If statement to check if nouns were saved
+    if (nounStor == "true") {
+        // console.log("nounStor is true")
+        document.getElementById("preset-Out").innerHTML += `<button class="button is-info is-small is-rounded" id="nounX">Noun</button>`;
+    }
+    // If statement to check if adjectives were saved
+    if (adjStor == "true") {
+        // console.log("adjStor is true")
+        document.getElementById("preset-Out").innerHTML += `<button class="button is-info is-small is-rounded" id="adjX">Adjective</button>`;
+    }
+
+})
