@@ -9,18 +9,18 @@ let nounBank = [];
 let adjBank = [];
 let verbBank = [];
 
+
 // randomWord Button
 clickW.addEventListener('click', function () {
-    let pOut = `<button class="button is-info is-small is-rounded" id="WordX">word</button>`;
-    if (words1 == false) {
-      document.getElementById("preset-Out").innerHTML += pOut;
-      words1 += true;
-    } else if (words1 && true) {
-        document.getElementById("preset-Out").innerHTML += pOut;
-        words1 += true;
-    };
-  
-  for (let i = 0; i < 10; i++){
+  let pOut = `<button class="button is-info is-small is-rounded" id="WordX">word</button>`;
+
+
+  document.getElementById("preset-Out").innerHTML += pOut;
+  this.disabled = true;
+  // words1 variable for local storage saving/loading
+  words1 = true
+
+  for (let i = 0; i < 10; i++) {
     fetch("https://wordsapiv1.p.rapidapi.com/words/?lettersMin=4&lettersMax=8&random=true", {
       method: "GET",
       redirect: "follow",
@@ -34,7 +34,7 @@ clickW.addEventListener('click', function () {
         return (response.json());
       })
       .then(function (dataWord) {
-          console.log(dataWord.word)
+        console.log(dataWord.word)
         let randomW = dataWord.word;
         // converts to uppercase
         let upper = randomW[0].toUpperCase() + randomW.slice(1);
@@ -44,26 +44,22 @@ clickW.addEventListener('click', function () {
         wordBank.push(combine.join(''));
         console.log(wordBank)
       })
-    }
-    // pushes the bank to the generate array
-    possibles.push(wordBank);
-  });
+  }
+  // pushes the bank to the generate array
+  possibles.push(wordBank);
+});
 
 console.log(possibles)
 
 // randomVerb Button
 clickV.addEventListener('click', function () {
-    let pOut = `<button class="button is-info is-small is-rounded" id="verbX">Verb</button>`;
-    if (verb1 == false) {
-      document.getElementById("preset-Out").innerHTML += pOut;
-  
-      verb1 += true;
-    }else if (verb1 && true) {
-        document.getElementById("preset-Out").innerHTML += pOut;
-        verb1 += true;
-    };
-  
-  for (let i = 0; i < 10; i++){
+  let pOut = `<button class="button is-info is-small is-rounded" id="verbX">Verb</button>`;
+
+  document.getElementById("preset-Out").innerHTML += pOut;
+  this.disabled = true;
+
+
+  for (let i = 0; i < 10; i++) {
     fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=verb&lettersMin=4&lettersMax=8&random=true", {
       method: "GET",
       redirect: "follow",
@@ -83,25 +79,22 @@ clickV.addEventListener('click', function () {
         verbBank.push(combine.join(""));
         console.log(verbBank)
       })
-    }
-    possibles.push(verbBank);
-    console.log(possibles)
-    console.log(verbBank)
-  });
+  }
+  possibles.push(verbBank);
+  console.log(possibles)
+  console.log(verbBank)
+});
 
-  // randomNoun Button
+// randomNoun Button
 clickN.addEventListener('click', function () {
-    let pOut = `<button class="button is-info is-small is-rounded" id="nounX">Noun</button>`;
-    if (noun1 == false) {
-      document.getElementById("preset-Out").innerHTML += pOut;
-  
-      noun1 += true;
-    }else if (noun1 && true) {
-        document.getElementById("preset-Out").innerHTML += pOut;
-        noun1 += true;
-    };
-  
-  for (let i = 0; i < 10; i++){
+  let pOut = `<button class="button is-info is-small is-rounded" id="nounX">Noun</button>`;
+
+  document.getElementById("preset-Out").innerHTML += pOut;
+  this.disabled = true;
+  // noun1 variable for local storage saving/loading
+  noun1 = true
+
+  for (let i = 0; i < 10; i++) {
     fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=noun&lettersMin=4&lettersMax=8&random=true", {
       method: "GET",
       redirect: "follow",
@@ -121,26 +114,23 @@ clickN.addEventListener('click', function () {
         nounBank.push(combine.join(""));
         console.log(nounBank)
       })
-    }
+  }
 
-    possibles.push(nounBank);
-    console.log(possibles)
-    console.log(nounBank)
-  });
+  possibles.push(nounBank);
+  console.log(possibles)
+  console.log(nounBank)
+});
 
-    // randomAdjective Button
+// randomAdjective Button
 clickA.addEventListener('click', function () {
-    let pOut = `<button class="button is-info is-small is-rounded" id="adjX">Adjective</button>`;
-    if (adj1 == false) {
-      document.getElementById("preset-Out").innerHTML += pOut;
-  
-      adj1 += true;
-    }else if (adj1 && true) {
-        document.getElementById("preset-Out").innerHTML += pOut;
-        adj1 += true;
-    };
-  
-  for (let i = 0; i < 10; i++){
+  let pOut = `<button class="button is-info is-small is-rounded" id="adjX">Adjective</button>`;
+
+  document.getElementById("preset-Out").innerHTML += pOut;
+  this.disabled = true;
+  // adj1 variable for local storage saving/loading
+  adj1 = true
+
+  for (let i = 0; i < 10; i++) {
     fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=noun&lettersMin=4&lettersMax=8&random=true", {
       method: "GET",
       redirect: "follow",
@@ -160,8 +150,8 @@ clickA.addEventListener('click', function () {
         adjBank.push(combine.join(""));
         console.log(adjBank)
       })
-    }
-    possibles.push(adjBank);
-    console.log(possibles)
-    console.log(adjBank)
-  });
+  }
+  possibles.push(adjBank);
+  console.log(possibles)
+  console.log(adjBank)
+});
