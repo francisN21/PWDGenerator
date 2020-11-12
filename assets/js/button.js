@@ -9,10 +9,6 @@ let nounBank = [];
 let adjBank = [];
 let verbBank = [];
 
-// let words1 = false;
-// let noun1 = false;
-// let verb1 = false;
-// let adj1 = false;
 
 // randomWord Button
 clickW.addEventListener('click', function () {
