@@ -8,40 +8,52 @@ let specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", "
 // placeholder for the chosen category
 let possibles = [];
 
+// add here
+let num1 = false;
+let emoji1 = false;
+let special1 = false;
+let words1 = false;
+let noun1 = false;
+let verb1 = false;
+let adj1 = false;
 
 
 // event listener to push to array 
 // Number button
 document.getElementById('num').addEventListener('click', function () {
-  let pOut = `<button class="button is-small is-info is-rounded" id="numX">num</button>`;
+  let pOut = `<button class="button is-small is-info is-rounded" id="numX">numbers</button>`;
   possibles.push(num);
   console.log(possibles);
-  
-    document.getElementById("preset-Out").innerHTML += pOut;
-    this.disabled = true;
-    
+
+  document.getElementById("preset-Out").innerHTML += pOut;
+  this.disabled = true;
+  // num1 variable for local storage saving/loading
+  num1 = true
+
 });
 // emoji button
 document.getElementById('emoji').addEventListener('click', function () {
   let pOut = `<button class="button is-info is-small is-rounded" id="emojiX">emoji</button>`;
   possibles.push(emojis);
   console.log(possibles);
-  
-    document.getElementById("preset-Out").innerHTML += pOut;
-    this.disabled = true;
-    
-  
+
+  document.getElementById("preset-Out").innerHTML += pOut;
+  this.disabled = true;
+  // emoji1 variable for local storage saving/loading
+  emoji1 = true
+
 });
 // specialC Button
 document.getElementById('special').addEventListener('click', function () {
   let pOut = `<button class="button is-info is-small is-rounded" id="special">special</button>`;
   possibles.push(specialChar);
   console.log(possibles);
-  
-    document.getElementById("preset-Out").innerHTML += pOut;
-    this.disabled = true;
 
-    
+  document.getElementById("preset-Out").innerHTML += pOut;
+  this.disabled = true;
+  // special1 variable for local storage saving/loading
+  special1 = true
+
 });
 
 
@@ -69,7 +81,8 @@ document.getElementById('reset').addEventListener('click', function () {
   // sets variables back to empty Array's
   var possibles = []
   var pOut = []
-  // set all selections to false
+
+  // set all selections to false for local Storage
   num1 = false;
   emoji1 = false;
   special1 = false;
@@ -94,8 +107,8 @@ document.getElementById('reset').addEventListener('click', function () {
   localStorage.setItem("adjectives", adj1)
 
 
-//  Makes all the buttons in Options selectable again. Doesn't check if any 
-// were disabled
+  //  Makes all the buttons in Options selectable again. Doesn't check if any 
+  // were disabled
   document.getElementById('special').disabled = false;
   document.getElementById('num').disabled = false;
   document.getElementById('emoji').disabled = false;

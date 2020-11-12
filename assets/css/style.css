@@ -73,7 +73,11 @@ h3 {
 
 #password-strength-bar{
     width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
+
+
 
   /* #password-strength-bar {
     width: 100%;
