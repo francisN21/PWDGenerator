@@ -88,13 +88,13 @@ document.getElementById('reset').addEventListener('click', function () {
   var possibles = []
   var pOut = []
   // set all selections to false
-  let num1 = false;
-  let emoji1 = false;
-  let special1 = false;
-  let words1 = false;
-  let noun1 = false;
-  let verb1 = false;
-  let adj1 = false;
+  num1 = false;
+  emoji1 = false;
+  special1 = false;
+  words1 = false;
+  noun1 = false;
+  verb1 = false;
+  adj1 = false;
 
   // clear's out the Buttons selected innerHTML
   document.querySelector("#preset-Out").innerHTML = pOut
@@ -122,9 +122,8 @@ document.getElementById('save').addEventListener('click', function () {
   localStorage.setItem("emojis", emoji1)
   localStorage.setItem("special", special1)
   localStorage.setItem("words", words1)
-  // Local Storage for Adj, Noun, and Verb
-  // localStorage.setItem("adjectives", adj1)
-  // localStorage.setItem("nouns", nouns1)
-  // localStorage.setItem("verbs", verbs1)
+  localStorage.setItem("adjectives", adj1)
+  localStorage.setItem("nouns", noun1)
+  localStorage.setItem("verbs", verb1)
 
 })
