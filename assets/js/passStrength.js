@@ -23,7 +23,7 @@ document.getElementById('test').addEventListener('click', function () {
                 document.querySelector("#password-bar").style.background = "red";
                 document.querySelector("#password-bar").style.border = "thin solid #000000"
                 document.querySelector("#password-bar").style.width = "33%";
-                document.querySelector("#password-bar").textContent = "Low Strength"
+                document.querySelector("#password-bar").textContent = "Weak Password"
             }
             // if password score is between 2 & 4 display 66% of bar and turn background Yellow
             if (passScore >= 2 && passScore < 4) {
@@ -31,7 +31,7 @@ document.getElementById('test').addEventListener('click', function () {
                 document.querySelector("#password-bar").style.background = "yellow";
                 document.querySelector("#password-bar").style.border = " thin solid #000000"
                 document.querySelector("#password-bar").style.width = "66%";
-                document.querySelector("#password-bar").textContent = "Medium Strength"
+                document.querySelector("#password-bar").textContent = "Medium Password"
             }
             // if password score is between 4 & 5 display 100% of bar and turn background Green
             if (passScore >= 4 && passScore < 5) {
@@ -39,7 +39,7 @@ document.getElementById('test').addEventListener('click', function () {
                 document.querySelector("#password-bar").style.background = "green";
                 document.querySelector("#password-bar").style.border = " thin solid #000000"
                 document.querySelector("#password-bar").style.width = "100%";
-                document.querySelector("#password-bar").textContent = "High Strength"
+                document.querySelector("#password-bar").textContent = "Strong Password"
             }
         })
 
