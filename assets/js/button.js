@@ -46,17 +46,6 @@ document.getElementById('special').addEventListener('click', function () {
 
 
 // Preset section
-<<<<<<< HEAD
-clickDefault.addEventListener('click', function () {
-  verbEvent();
-  nounEvent();
-  specialEvent();
-  numEvent();
-  numEvent();
-  numEvent();
-  numEvent();
-  specialEvent();
-=======
 clickDefault.addEventListener('click', function (){
     verbEvent();
     nounEvent();
@@ -111,5 +100,4 @@ clickImpossible.addEventListener('click', function (){
     numEvent();
     numEvent();
     numEvent();
->>>>>>> 98eb67921d83140e10e5496c0c6455aa897c55d5
 });
