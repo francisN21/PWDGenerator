@@ -44,6 +44,7 @@ document.getElementById('reset').addEventListener('click', function () {
   // sets variables back to empty Array's
   possibles = []
   var pOut = []
+  pw = []
 
   // set all selections to false for local Storage
   num1 = false;
