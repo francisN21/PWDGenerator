@@ -1,55 +1,94 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    text-align: center;
-    display: block;
-    font-family: 'Titillium Web', sans-serif;
-    color: black;
-  }
-
-.title{
-    color: black;
-    font-family: 'Titillium Web', sans-serif;
-    text-align: center;
-    display: auto
-}
-  
-
-.module{
-    background-image: url("../images/background.jpg") ;
-    height: 100%;
-    background-size: auto;
-
-}
-header,h3{
-    display: block;
-    font-family: 'Titillium Web', sans-serif;
-    text-align: center;
-    font-size: 70px;
-    color: black;
-    
-}
-
-.columns.is-horizontal {
-  flex-direction: column;
-
-}
-
-body:before {
-  content: "";
-  display: block;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
+body,
+html {
   height: 100%;
-  z-index: -10;
-  background: url("../images/background.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  margin: 0;
+  text-align: center;
+  display: block;
+  font-family: "Titillium Web", sans-serif;
+  color: black;
+}
+
+.title {
+  color: black;
+  font-family: "Titillium Web", sans-serif;
+  text-align: center;
+  display: auto;
+}
+
+.module {
+  background-image: url("../images/background.jpg");
+  height: 100%;
+  min-height: 950px;
+  background-size: auto;
+}
+
+header,
+h3 {
+  display: block;
+  font-family: "Titillium Web", sans-serif;
+  text-align: center;
+  font-size: 70px;
+  color: black;
+}
+
+.checkbox {
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+  width: 6em;
+}
+
+.card {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  border-width: 1px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  color: hsl(206, 17%, 28%);
+  font-size: 18px;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 30px 40px;
+  /* display: flex;
+
+
+  align-items: center;
+
+
+  justify-content: center; */
+}
+
+.button {
+  margin-bottom: 10px;
+}
+
+.card-footer::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+#preset-Out .button {
+  background-color: orangered;
+}
+
+#password-strength-bar{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 
 
+  /* #password-strength-bar {
+    width: 100%;
+    border: 2px solid black;
+  } */
+
+#password-bar {
+    width: 100%;
+    height: 30px;
+    background-color: white;
+}
+.section {
+  padding: 0px;
+}

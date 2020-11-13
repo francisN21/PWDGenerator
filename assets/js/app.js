@@ -1,71 +1,64 @@
-const el = document.querySelector("#module");
-
-el.addEventListener("mousemove", (e) => {
-  el.style.backgroundPositionX = -e.offsetX + "px";
-  el.style.backgroundPositionY = -e.offsetY + "px";
-});
-
 // temporary arrays so we can see results for password
-// words will be replaced by the api
-// will add figures of speech
 let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-let emojis = ["😢", "💕", "🥺", "😉", "🥱", "😍", "😒", ""];
+let emojis = ["😢", "💕", "🥺", "😉", "🥱", "😍", "😒", "xD"];
 let specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
-let word1 = [];
+// api fetched arrays
+
+
+// placeholder for the chosen category
 let possibles = [];
 
+// add here
+let num1 = false;
+let emoji1 = false;
+let special1 = false;
+let words1 = false;
+let noun1 = false;
+let verb1 = false;
+let adj1 = false;
+
+
 // event listener to push to array 
+// Number button
 document.getElementById('num').addEventListener('click', function () {
-  let pOut = `<button class="button is-info is-rounded" id="numX">num</button>`;
+  let pOut = `<button class="button is-small is-info is-rounded" id="numX">numbers</button>`;
   possibles.push(num);
-  console.log(possibles)
-  document.getElementById("preset-Out").innerHTML = pOut;
+  console.log(possibles);
+
+  document.getElementById("preset-Out").innerHTML += pOut;
+  this.disabled = true;
+  // num1 variable for local storage saving/loading
+  num1 = true
+
 });
+// emoji button
 document.getElementById('emoji').addEventListener('click', function () {
-  let pOut = `<button class="button is-info is-rounded" id="emojiX">emoji</button>`;
+  let pOut = `<button class="button is-info is-small is-rounded" id="emojiX">emoji</button>`;
   possibles.push(emojis);
-  console.log(possibles)
-  document.getElementById("preset-Out").innerHTML = pOut;
+  console.log(possibles);
+
+  document.getElementById("preset-Out").innerHTML += pOut;
+  this.disabled = true;
+  // emoji1 variable for local storage saving/loading
+  emoji1 = true
+
 });
+// specialC Button
 document.getElementById('special').addEventListener('click', function () {
+  let pOut = `<button class="button is-info is-small is-rounded" id="special">special</button>`;
   possibles.push(specialChar);
-  console.log(possibles)
-});
-document.getElementById('words').addEventListener('click', function () {
-  // possibles.push(words);
-  // console.log(possibles)
-  let words = [];
-  fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=noun&random=true", {
-    method: "GET",
-    redirect: "follow",
-    cache: "reload",
-    headers: {
-      "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
-      "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
-    }
-  })
-    .then(function (response) {
-      return (response.json());
-    })
-    .then(function (dataNoun) {
-      // var nounArray = dataNoun.results.data
-      // console.log(nounArray)
+  console.log(possibles);
 
-      var randomN = dataNoun.word.split(" ");
-      console.log(randomN)
-      // console log the Noun word
-      var randomNoun = randomN;
-      console.log(`Random Generated Noun: ${randomNoun}`)
-      words.push(randomN.join(""));
-      word1.push(words);
-      possibles.push(word1)
-      console.log(word1)
-    });
+  document.getElementById("preset-Out").innerHTML += pOut;
+  this.disabled = true;
+  // special1 variable for local storage saving/loading
+  special1 = true
+
 });
 
 
 
-
+// placeholder for the generated password
 let pw = [];
 // generate fetches the possibles array to create the password
 // lvl1 password generator - will add more complexity as it goes
@@ -73,132 +66,81 @@ document.getElementById('generate').addEventListener('click', function () {
   let ans = possibles;
 
 
-  console.log("this is ans" + ans)
-  for (let i = 0; i < ans.length; i++) {
-    let rand = Math.floor(Math.random() * ans[i].length);
-    pw += possibles[i][rand];
+  console.log("Generated password: " + ans)
+  for (let x = 0; x < ans.length; x++) {
+    let rand = Math.floor(Math.random() * ans[x].length);
+    pw += possibles[x][rand];
     console.log(possibles)
   }
   document.getElementById("pwd").innerHTML = pw;
 });
 
 
+// Clear Button on Click Event to clear the buttons selected and the password picked
+document.getElementById('reset').addEventListener('click', function () {
+  // sets variables back to empty Array's
+  var possibles = []
+  var pOut = []
 
-// console.log(pw);
-
-
-// Event listener to generate random word when words button is clicked
-// document.getElementById('words').addEventListener('click', function () {
-
-//   fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
-//     method: "GET",
-//     redirect: "follow",
-//     cache: "reload",
-//     headers: {
-//       "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
-//       "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
-//     }
-//   })
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       var randomWord = data.word
-//       // console log the generated word
-//       console.log(`Random Generated Word: ${randomWord}`)
-//       possibles.push(randomWord)
+  // set all selections to false for local Storage
+  num1 = false;
+  emoji1 = false;
+  special1 = false;
+  words1 = false;
+  noun1 = false;
+  verb1 = false;
+  adj1 = false;
 
 
-//       // put the word into the box
-//       // document.getElementById("pwd").innerHTML = data.word;
+  // clear's out the Buttons selected innerHTML
+  document.querySelector("#preset-Out").innerHTML = pOut
+  // Clear's out local storage
+  localStorage.setItem("save", possibles);
+  // Clear's out the password box text content
+  document.querySelector("#pwd").textContent = ""
+  // set local storage to of buttons to false
+  localStorage.setItem("numbers", num1)
+  localStorage.setItem("emojis", emoji1)
+  localStorage.setItem("special", special1)
+  localStorage.setItem("words", words1)
+  localStorage.setItem("nouns", noun1)
+  localStorage.setItem("verbs", verb1)
+  localStorage.setItem("adjectives", adj1)
+  localStorage.setItem("possibles", possibles)
 
 
-//       // Fetch request to find the word's rhyme
-
-//       // fetch(`https://wordsapiv1.p.rapidapi.com/words/${randomWord}/rhymes`, {
-//       //   method: "GET",
-//       //   redirect: "follow",
-//       //   cache: "reload",
-//       //   headers: {
-//       //     "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
-//       //     "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
-//       //   }
-//       // })
-//       //   .then(function (response) {
-//       //     return (response.json());
-//       //   })
-//       //   .then(function (dataRhymes) {
-//       //     console.log(dataRhymes.rhymes.all)
-//       //   })
-
-//     })
+  //  Makes all the buttons in Options selectable again. Doesn't check if any 
+  // were disabled
+  document.getElementById('special').disabled = false;
+  document.getElementById('num').disabled = false;
+  document.getElementById('emoji').disabled = false;
+  document.getElementById('words').disabled = false;
+  document.getElementById('adjective').disabled = false;
+  document.getElementById('noun').disabled = false;
+  document.getElementById('verb').disabled = false;
 
 
-//   // Fetch request to get a random Verb
-//   fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=verb&random=true", {
-//     method: "GET",
-//     redirect: "follow",
-//     cache: "reload",
-//     headers: {
-//       "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
-//       "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
-//     }
-//   })
-//     .then(function (response) {
-//       return (response.json());
-//     })
-//     .then(function (dataVerb) {
-//       var randomVerb = dataVerb.word
-//       // console log the Verb word
-//       console.log(`Random Generated Verb ${randomVerb}`)
+  // Removes the bottom password strength bar left over from previous run
+  // There is another way to set the attributes using this.setAttribute but I used this way
+  document.querySelector("#password-bar").innerHTML = ""
+  document.querySelector("#password-bar").style = ""
+  document.querySelector("#password-strength-bar").style = ""
+})
 
-//       possibles.push(randomVerb)
+// Save Button on Click Event to save the buttons selected and the password picked
+document.getElementById('save').addEventListener('click', function () {
+  // Saves possibles to local Storage
+  localStorage.setItem("possibles", possibles)
+  // Save generated Password to localStorage 
+  localStorage.setItem("save", pw);
 
-//     })
+  // set local storage to save the buttons pressed)
+  localStorage.setItem("numbers", num1)
+  localStorage.setItem("emojis", emoji1)
+  localStorage.setItem("special", special1)
+  localStorage.setItem("words", words1)
+  localStorage.setItem("adjectives", adj1)
+  localStorage.setItem("nouns", noun1)
+  localStorage.setItem("verbs", verb1)
 
-
-//   // Fetch request to get a random Noun
-//   fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=noun&random=true", {
-//     method: "GET",
-//     redirect: "follow",
-//     cache: "reload",
-//     headers: {
-//       "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
-//       "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
-//     }
-//   })
-//     .then(function (response) {
-//       return (response.json());
-//     })
-//     .then(function (dataNoun) {
-//       // var nounArray = dataNoun.results.data
-//       // console.log(nounArray)
-//       var randomNoun = dataNoun.word
-//       // console log the Noun word
-//       console.log(`Random Generated Noun: ${randomNoun}`)
-//       possibles.push(randomNoun)
-//     })
-
-//   // Fetch request to get a random Adjective
-//   fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=adjective&random=true", {
-//     method: "GET",
-//     redirect: "follow",
-//     cache: "reload",
-//     headers: {
-//       "x-rapidapi-key": "e2ade1d70fmshb66883d53854717p17f9bejsn92e2ff768b21",
-//       "x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
-//     }
-//   })
-//     .then(function (response) {
-//       return (response.json());
-//     })
-//     .then(function (dataAdjective) {
-//       // var adjectiveArray = dataAdjective..results.data
-//       // console.log(adjectiveArray)
-//       var randomAdjective = dataAdjective.word
-//       // console log the Adjectives word
-//       console.log(`Random Generated Adjective: ${randomAdjective}`)
-//       possibles.push(randomAdjective)
-//       console.log(possibles)
-//     })
-// })
+})
