@@ -21,7 +21,7 @@ wordEvent();
 });
 // randomVerb Button
 clickV.addEventListener('click', function () {
-  verbEvent();
+verbEvent();
 });
 // randomNoun Button
 clickN.addEventListener('click', function () {
@@ -55,4 +55,49 @@ clickDefault.addEventListener('click', function (){
     numEvent();
     numEvent();
     specialEvent();
+});
+
+clickSimple.addEventListener('click', function (){
+    wordEvent();
+    specialEvent();
+    adjectiveEvent();
+    numEvent();
+    numEvent();
+    specialEvent();
+});
+
+clickWifi.addEventListener('click', function (){
+    verbEvent();
+    nounEvent();
+    nounEvent();
+    specialEvent();
+
+});
+
+clickSocials.addEventListener('click', function (){
+    numEvent();
+    specialEvent();
+    verbEvent();
+    specialEvent();
+    nounEvent();
+    specialEvent();
+    specialEvent();
+});
+
+clickImpossible.addEventListener('click', function (){
+    numEvent();
+    numEvent();
+    numEvent();
+    numEvent();
+    verbEvent();
+    specialEvent();
+    wordEvent();
+    specialEvent();
+    nounEvent();
+    adjectiveEvent();
+    specialEvent();
+    numEvent();
+    numEvent();
+    numEvent();
+    numEvent();
 });
