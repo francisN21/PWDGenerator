@@ -22,16 +22,37 @@
         <header>
             <h3>Password Generator</h3>
         </header>
-
-        <div class="description">
-            <h4>Secure but memorable password generator</h4>
-            <P>Create your own preset for your own liking</P>
-        </div>
-
-
         <div class="card">
             <div class="container">
+                <div class="description">
+                    <h4>Secure and memorable password generator</h4>
+                    <br>
+                </div>
                 <div class="checkbox">
+<!--  -->
+<div class="tile is-ancestor">
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+          <p>The Idea:</p>
+          <p>To have a structurized password for you to memorize the generated password quicker.</p>
+          <P>Click test to check the password strength!</P>
+          <div class="content">
+            <!-- Content -->
+          </div>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+          <p>Good Password Practice:</p>
+          <p>To have special character/number as the word separator as seen on the social media preset.</p>
+          <p>The more extra special character or number between the words the better the password strength.</p>
+          <div class="content">
+            <!-- Content -->
+          </div>
+        </article>
+      </div>
+    </div>
+<!--  -->
                     <p class="is-size-5">Options</p>
                     <br>
                     <button class="button is-small is-info is-rounded" id="num">Numbers</button>
@@ -59,14 +80,12 @@
                     </div>
                     <button class="button is-danger" id="reset">reset</button>
                 </div>
-
-
                 <div class="card-body">
                     <section class="section">
                         <div class="container">
                             <div class="column">
-                                <textarea readonly id="pwd" placeholder="Please select from the category"
-                                    aria-label="Generated Password">
+                                <textarea readonly id="pwd" placeholder="Please select from options"
+                                    aria-label="Generated Password" class="text">
                                                 </textarea>
                             </div>
                         </div>
@@ -92,39 +111,11 @@
 
         </ul>
     </div>
-
-    <!-- 
-    <section class="section">
-        <div class="column is-12-tablet is-12-desktop is-12-full-hd">
-            <div class="card">
-                <div class="card-content">
-                    <div class="column">
-                        <h2 class="title is-4"> New Password</h2>
-                        <br>
-                        <textarea readonly id="pwd" class="strength" placeholder="New Password Here"
-                            aria-label="Generated Password">
-                                    </textarea>
-                        <button class="button is-danger is-rounded is-small" id="generate">Generate</button> -->
-    <!-- <button class="button is-danger is-rounded is-small" id="test">Test Password</button>
-                            </div>
-                            <div id="password-strength-bar">
-                                <div id="password-bar"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <button class="button is-danger is-rounded is-small" id="save">Save</button>
-                            <button class="button is-danger is-rounded is-small" id="load">Load</button>
-                        </div>
-                    </div>
-                        </div>
-                </div> -->
-
     <script src="./assets/js/app.js"></script>
     <script src="./assets/js/button.js"></script>
     <script src="./assets/js/passStrength.js"></script>
     <script src="./assets/js/JSstyle.js"></script>
     <script src="./assets/js/events.js"></script>
-
 </body>
 
 </html>

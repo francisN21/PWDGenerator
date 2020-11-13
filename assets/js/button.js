@@ -58,19 +58,25 @@ clickDefault.addEventListener('click', function (){
 });
 
 clickSimple.addEventListener('click', function (){
+    specialEvent();
     wordEvent();
     specialEvent();
     adjectiveEvent();
     numEvent();
     numEvent();
     specialEvent();
+    specialEvent();
 });
 
 clickWifi.addEventListener('click', function (){
+    numEvent();
+    numEvent();
     verbEvent();
     nounEvent();
     nounEvent();
     specialEvent();
+    numEvent();
+    numEvent();
 
 });
 
