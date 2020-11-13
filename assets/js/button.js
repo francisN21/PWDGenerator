@@ -21,7 +21,7 @@ clickW.addEventListener('click', function () {
 });
 // randomVerb Button
 clickV.addEventListener('click', function () {
-  verbEvent();
+verbEvent();
 });
 // randomNoun Button
 clickN.addEventListener('click', function () {
@@ -46,6 +46,7 @@ document.getElementById('special').addEventListener('click', function () {
 
 
 // Preset section
+<<<<<<< HEAD
 clickDefault.addEventListener('click', function () {
   verbEvent();
   nounEvent();
@@ -55,4 +56,60 @@ clickDefault.addEventListener('click', function () {
   numEvent();
   numEvent();
   specialEvent();
+=======
+clickDefault.addEventListener('click', function (){
+    verbEvent();
+    nounEvent();
+    specialEvent();
+    numEvent();
+    numEvent();
+    numEvent();
+    numEvent();
+    specialEvent();
+});
+
+clickSimple.addEventListener('click', function (){
+    wordEvent();
+    specialEvent();
+    adjectiveEvent();
+    numEvent();
+    numEvent();
+    specialEvent();
+});
+
+clickWifi.addEventListener('click', function (){
+    verbEvent();
+    nounEvent();
+    nounEvent();
+    specialEvent();
+
+});
+
+clickSocials.addEventListener('click', function (){
+    numEvent();
+    specialEvent();
+    verbEvent();
+    specialEvent();
+    nounEvent();
+    specialEvent();
+    specialEvent();
+});
+
+clickImpossible.addEventListener('click', function (){
+    numEvent();
+    numEvent();
+    numEvent();
+    numEvent();
+    verbEvent();
+    specialEvent();
+    wordEvent();
+    specialEvent();
+    nounEvent();
+    adjectiveEvent();
+    specialEvent();
+    numEvent();
+    numEvent();
+    numEvent();
+    numEvent();
+>>>>>>> 98eb67921d83140e10e5496c0c6455aa897c55d5
 });
