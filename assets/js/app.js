@@ -62,7 +62,6 @@ document.getElementById('reset').addEventListener('click', function () {
   // Clear's out the password box text content
   document.querySelector("#pwd").textContent = "";
   // set local storage to of buttons to false
-<<<<<<< HEAD
   localStorage.setItem("numbers", num1)
   localStorage.setItem("emojis", emoji1)
   localStorage.setItem("special", special1)
@@ -71,15 +70,6 @@ document.getElementById('reset').addEventListener('click', function () {
   localStorage.setItem("verbs", verb1)
   localStorage.setItem("adjectives", adj1)
   localStorage.setItem("possibles", possibles)
-=======
-  localStorage.setItem("numbers", num1);
-  localStorage.setItem("emojis", emoji1);
-  localStorage.setItem("special", special1);
-  localStorage.setItem("words", words1);
-  localStorage.setItem("nouns", noun1);
-  localStorage.setItem("verbs", verb1);
-  localStorage.setItem("adjectives", adj1);
->>>>>>> 74c3308e551f666672d3854c253351db75f7a6e6
 
 
   //  Makes all the buttons in Options selectable again. Doesn't check if any 
