@@ -42,7 +42,7 @@ document.getElementById('generate').addEventListener('click', function () {
 // Clear Button on Click Event to clear the buttons selected and the password picked
 document.getElementById('reset').addEventListener('click', function () {
   // sets variables back to empty Array's
-  var possibles = []
+  possibles = []
   var pOut = []
 
   // set all selections to false for local Storage
