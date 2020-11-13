@@ -17,7 +17,7 @@ let verbBank = [];
 
 // randomWord Button
 clickW.addEventListener('click', function () {
-wordEvent();
+  wordEvent();
 });
 // randomVerb Button
 clickV.addEventListener('click', function () {
@@ -25,27 +25,38 @@ verbEvent();
 });
 // randomNoun Button
 clickN.addEventListener('click', function () {
-nounEvent();
+  nounEvent();
 });
 // randomAdjective Button
 clickA.addEventListener('click', function () {
-adjectiveEvent();
+  adjectiveEvent();
 });
 // Number button
 document.getElementById('num').addEventListener('click', function () {
-numEvent();
+  numEvent();
 });
 // emoji button
 document.getElementById('emoji').addEventListener('click', function () {
-emojiEvent();
+  emojiEvent();
 });
 // specialC Button
 document.getElementById('special').addEventListener('click', function () {
-specialEvent();
+  specialEvent();
 });
 
 
 // Preset section
+<<<<<<< HEAD
+clickDefault.addEventListener('click', function () {
+  verbEvent();
+  nounEvent();
+  specialEvent();
+  numEvent();
+  numEvent();
+  numEvent();
+  numEvent();
+  specialEvent();
+=======
 clickDefault.addEventListener('click', function (){
     verbEvent();
     nounEvent();
@@ -100,4 +111,5 @@ clickImpossible.addEventListener('click', function (){
     numEvent();
     numEvent();
     numEvent();
+>>>>>>> 98eb67921d83140e10e5496c0c6455aa897c55d5
 });
