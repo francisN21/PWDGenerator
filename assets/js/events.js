@@ -41,7 +41,7 @@ function specialEvent(){
         this.disabled = true;
         // words1 variable for local storage saving/loading
         words1 = true;
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 3; i++) {
           fetch("https://wordsapiv1.p.rapidapi.com/words/?lettersMin=4&lettersMax=8&random=true", {
             method: "GET",
             redirect: "follow",
@@ -76,7 +76,7 @@ function specialEvent(){
         let pOut = `<button class="button is-info is-small is-rounded" id="verbX">Verb</button>`;
         document.getElementById("preset-Out").innerHTML += pOut;
         this.disabled = true;
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 3; i++) {
           fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=verb&lettersMin=4&lettersMax=8&random=true", {
             method: "GET",
             redirect: "follow",
@@ -108,7 +108,7 @@ function specialEvent(){
         this.disabled = true;
         // noun1 variable for local storage saving/loading
         noun1 = true
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 3; i++) {
             fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=noun&lettersMin=4&lettersMax=8&random=true", {
             method: "GET",
             redirect: "follow",
@@ -140,7 +140,7 @@ function specialEvent(){
         this.disabled = true;
         // adj1 variable for local storage saving/loading
         adj1 = true
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 3; i++) {
             fetch("https://wordsapiv1.p.rapidapi.com/words/?partOfSpeech=noun&lettersMin=4&lettersMax=8&random=true", {
             method: "GET",
             redirect: "follow",
