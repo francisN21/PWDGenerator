@@ -3,8 +3,6 @@
 // Click Test to test the password
 document.getElementById('test').addEventListener('click', function () {
     // Temporary password for testing
-
-
     // fetch request using Thomas' API, thank you Thomas! 
     const corsAll = "https://cors-anywhere.herokuapp.com/"
 
@@ -48,10 +46,8 @@ document.getElementById('test').addEventListener('click', function () {
         // Catch any Error from the API
         .catch(err => {
             console.error(err);
-        })
-})
-
-
+        });
+});
 // Load button on Click Event to reload buttons selected
 document.getElementById('load').addEventListener('click', function () {
     // Gets possibles from local storage
@@ -64,13 +60,13 @@ document.getElementById('load').addEventListener('click', function () {
     document.querySelector("#pwd").textContent = load
 
     // set variables to get the local storage values
-    let numbersStor = localStorage.getItem("numbers")
-    let emojiStor = localStorage.getItem("emojis")
-    let specialStor = localStorage.getItem("special")
-    let verbStor = localStorage.getItem("verbs")
-    let wordsStor = localStorage.getItem("words")
-    let nounStor = localStorage.getItem("nouns")
-    let adjStor = localStorage.getItem("adjectives")
+    let numbersStor = localStorage.getItem("numbers");
+    let emojiStor = localStorage.getItem("emojis");
+    let specialStor = localStorage.getItem("special");
+    let verbStor = localStorage.getItem("verbs");
+    let wordsStor = localStorage.getItem("words");
+    let nounStor = localStorage.getItem("nouns");
+    let adjStor = localStorage.getItem("adjectives");
 
     // console.log to check the values
     // console.log(numbersStor)
@@ -118,5 +114,4 @@ document.getElementById('load').addEventListener('click', function () {
         // console.log("adjStor is true")
         document.getElementById("preset-Out").innerHTML += `<button class="button is-info is-small is-rounded" id="adjX">Adjective</button>`;
     }
-
-})
+});
