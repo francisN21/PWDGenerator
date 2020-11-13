@@ -1,6 +1,6 @@
 // temporary arrays so we can see results for password
 let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-let emojis = ["😢", "💕", "🥺", "😉", "🥱", "😍", "😒", "xD"];
+let emojis = ["😢", "💕", "🥺", "😉", "🥱", "😍", "😒", "🤬"];
 let specialChar = ["!", "#", "$", "%", "&", "'", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "^", "_", "|", "~"];
 // api fetched arrays
 // placeholder for the chosen category
@@ -88,3 +88,6 @@ document.getElementById('save').addEventListener('click', function () {
   localStorage.setItem("nouns", noun1);
   localStorage.setItem("verbs", verb1);
 });
+
+
+
