@@ -18,43 +18,6 @@ let verb1 = false;
 let adj1 = false;
 
 
-// event listener to push to array 
-// Number button
-document.getElementById('num').addEventListener('click', function () {
-  let pOut = `<button class="button is-small is-info is-rounded" id="numX">numbers</button>`;
-  possibles.push(num);
-  console.log(possibles);
-
-  document.getElementById("preset-Out").innerHTML += pOut;
-  this.disabled = true;
-  // num1 variable for local storage saving/loading
-  num1 = true
-
-});
-// emoji button
-document.getElementById('emoji').addEventListener('click', function () {
-  let pOut = `<button class="button is-info is-small is-rounded" id="emojiX">emoji</button>`;
-  possibles.push(emojis);
-  console.log(possibles);
-
-  document.getElementById("preset-Out").innerHTML += pOut;
-  this.disabled = true;
-  // emoji1 variable for local storage saving/loading
-  emoji1 = true
-
-});
-// specialC Button
-document.getElementById('special').addEventListener('click', function () {
-  let pOut = `<button class="button is-info is-small is-rounded" id="special">special</button>`;
-  possibles.push(specialChar);
-  console.log(possibles);
-
-  document.getElementById("preset-Out").innerHTML += pOut;
-  this.disabled = true;
-  // special1 variable for local storage saving/loading
-  special1 = true
-
-});
 
 
 
@@ -92,19 +55,19 @@ document.getElementById('reset').addEventListener('click', function () {
   adj1 = false;
 
   // clear's out the Buttons selected innerHTML
-  document.querySelector("#preset-Out").innerHTML = pOut
+  document.querySelector("#preset-Out").innerHTML = pOut;
   // Clear's out local storage
   localStorage.setItem("save", possibles);
   // Clear's out the password box text content
-  document.querySelector("#pwd").textContent = ""
+  document.querySelector("#pwd").textContent = "";
   // set local storage to of buttons to false
-  localStorage.setItem("numbers", num1)
-  localStorage.setItem("emojis", emoji1)
-  localStorage.setItem("special", special1)
-  localStorage.setItem("words", words1)
-  localStorage.setItem("nouns", noun1)
-  localStorage.setItem("verbs", verb1)
-  localStorage.setItem("adjectives", adj1)
+  localStorage.setItem("numbers", num1);
+  localStorage.setItem("emojis", emoji1);
+  localStorage.setItem("special", special1);
+  localStorage.setItem("words", words1);
+  localStorage.setItem("nouns", noun1);
+  localStorage.setItem("verbs", verb1);
+  localStorage.setItem("adjectives", adj1);
 
 
   //  Makes all the buttons in Options selectable again. Doesn't check if any 
@@ -124,13 +87,13 @@ document.getElementById('save').addEventListener('click', function () {
   // Saves possibles to local Storage
   localStorage.setItem("save", possibles);
 
-  // set local storage to save the buttons pressed)
-  localStorage.setItem("numbers", num1)
-  localStorage.setItem("emojis", emoji1)
-  localStorage.setItem("special", special1)
-  localStorage.setItem("words", words1)
-  localStorage.setItem("adjectives", adj1)
-  localStorage.setItem("nouns", noun1)
-  localStorage.setItem("verbs", verb1)
+  // set local storage to save the buttons pressed);
+  localStorage.setItem("numbers", num1);
+  localStorage.setItem("emojis", emoji1);
+  localStorage.setItem("special", special1);
+  localStorage.setItem("words", words1);
+  localStorage.setItem("adjectives", adj1);
+  localStorage.setItem("nouns", noun1);
+  localStorage.setItem("verbs", verb1);
 
 })
