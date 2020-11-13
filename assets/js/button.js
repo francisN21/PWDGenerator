@@ -7,13 +7,15 @@ let clickSimple = document.getElementById('simple');
 let clickWifi = document.getElementById('wifi');
 let clickSocials = document.getElementById('socials');
 let clickImpossible = document.getElementById('impossible');
+let clickBank = document.getElementById('bank');
+
+
 
 // stores the fetched data in array
 let wordBank = [];
 let nounBank = [];
 let adjBank = [];
 let verbBank = [];
-
 
 // randomWord Button
 clickW.addEventListener('click', function () {
