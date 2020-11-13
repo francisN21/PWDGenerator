@@ -1,5 +1,4 @@
 // All Events container
-
 function numEvent(){
     let pOut = `<button class="button is-small is-info is-rounded" id="numX">#</button>`;
     possibles.push(num);
@@ -12,7 +11,7 @@ function numEvent(){
     };
 
 function emojiEvent(){
-    let pOut = `<button class="button is-info is-small is-rounded" id="emojiX">-</button>`;
+    let pOut = `<button class="button is-info is-small is-rounded" id="emojiX">:)</button>`;
     possibles.push(emojis);
     console.log(possibles);
   
@@ -23,7 +22,7 @@ function emojiEvent(){
     };
 
 function specialEvent(){
-    let pOut = `<button class="button is-info is-small is-rounded" id="special">:)</button>`;
+    let pOut = `<button class="button is-info is-small is-rounded" id="special">-</button>`;
     possibles.push(specialChar);
     console.log(possibles);
       
@@ -98,8 +97,8 @@ function specialEvent(){
                 });
         }
         possibles.push(verbBank);
-        console.log(possibles)
-        console.log(verbBank)
+        console.log(possibles);
+        console.log(verbBank);
         };
     // random noun fetch
     function nounEvent(){
@@ -130,8 +129,8 @@ function specialEvent(){
               });
             }
         possibles.push(nounBank);
-        console.log(possibles)
-        console.log(nounBank)
+        console.log(possibles);
+        console.log(nounBank);
         };
     // random adjective fetch
     function adjectiveEvent(){
