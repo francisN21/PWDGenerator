@@ -1,24 +1,39 @@
 ### Personal Dashboard APP
 ```
-Comments will be added here soon
+Coding bootcamp project completed with fellow zoom classmates.
+Archana and Delgadillo worked on the design.
+Sean figured out the APIs.
+Francisco helped on putting it all together.
+
+
 ```
 
 ### About
 ```
-not your typical password generator that just spits out random letters and number.
-configurable results to your liking.
-phrase like password creation that will be easier to memorise for your own usage.
-you can even generate fun phrases using this password generator.
+Not your typical password generator that just spits out random letters and number.
+Configurable results to your liking.
+Phrase like password creation that will be easier to memorise for your own usage.
+You can even generate fun phrases using this password generator.
 ```
 
 ### Tech
 ```
-Please fill up this page once we have decided on what framework to use for css
-let me know if you guys want jquery or just vanilla java script. I recommend doing vanilla java script just so we can have more practice on JS itself
+* HTML
+* CSS
+* JS
+* Bulma 
+
 ```
 
-### DEMO
+### Background Photo
 ```
-paste gif here
+Photo by Damiano Lingauri on Unsplash
+![Background image](https://images.unsplash.com/photo-1584890132374-d69d5d01483e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80)
+```
+
+### Demo
+```
+![PWD Demo](https://github.com/DaisyDelgadillo/PWDGenerator-1/blob/main/assets/demo/PWD.gif?raw=true)
+
 Click me
 ```
