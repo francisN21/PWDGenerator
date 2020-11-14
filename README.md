@@ -23,7 +23,8 @@ You can even generate fun phrases using this password generator.
 
 ### DEMO
 ```
-<img src="https://github.com/DaisyDelgadillo/PWDGenerator-1/blob/main/PWDGenerator.gif" width="128"/>/
+
+![Code-Quiz Demo] assets/demo/PWDGenerator.gif
 
 Click me
 ```
