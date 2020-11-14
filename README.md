@@ -24,7 +24,7 @@ You can even generate fun phrases using this password generator.
 ### DEMO
 ```
 
-![Code-Quiz Demo] assets/demo/PWDGenerator.gif
+![Code-Quiz Demo] (assets/demo/PWDGenerator.gif)
 
 Click me
 ```
