@@ -28,12 +28,12 @@ You can even generate fun phrases using this password generator.
 ### Background Photo
 ```
 Photo by Damiano Lingauri on Unsplash
-![Background image](.assets/images/background.jpg)
+![Background image](https://images.unsplash.com/photo-1584890132374-d69d5d01483e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80)
 ```
 
 ### Demo
 ```
-![PWD Demo](.assets/demo/PWD.gif)
+![PWD Demo](https://github.com/DaisyDelgadillo/PWDGenerator-1/blob/main/assets/demo/PWD.gif?raw=true)
 
 Click me
 ```
