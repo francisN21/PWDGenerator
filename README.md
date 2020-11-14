@@ -25,10 +25,15 @@ You can even generate fun phrases using this password generator.
 
 ```
 
+### Background Photo
+```
+Photo by Damiano Lingauri on Unsplash
+
+
 ### DEMO
 ```
 
-![Code-Quiz Demo](./assets/demo/PWDGenerator.gif)
+![PWD Demo](.assets/demo/PWD.gif)
 
 Click me
 ```
