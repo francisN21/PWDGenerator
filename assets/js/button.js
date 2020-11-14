@@ -119,7 +119,6 @@ clickBank.addEventListener('click', function (){
 });
 
 
-// Copy btn funtion with alerts 
 
 function myFunction() {
   var copyText = document.getElementById('pwd');

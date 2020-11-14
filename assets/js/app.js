@@ -1,6 +1,6 @@
 // temporary arrays so we can see results for password
 let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-let emojis = ["😢", "💕", "🥺", "😉", "🥱", "😍", "😒", "🤬"];
+let emojis = ["😢", "💕", "🥺", "😉", "🥱", "😍", "😒", "🥺"];
 let specialChar = ["!", "#", "$", "%", "&", "'", "*", "+", ",", "-", ".", "/", "<", "=", ">", "?", "@", "^", "_", "|", "~"];
 // api fetched arrays
 // placeholder for the chosen category
@@ -29,6 +29,7 @@ document.getElementById('generate').addEventListener('click', function () {
   }
   document.getElementById("pwd").innerHTML = pw;
 });
+
 // Clear Button on Click Event to clear the buttons selected and the password picked
 document.getElementById('reset').addEventListener('click', function () {
   // sets variables back to empty Array's
@@ -73,9 +74,10 @@ document.getElementById('reset').addEventListener('click', function () {
   document.querySelector("#password-bar").style = "";
   document.querySelector("#password-strength-bar").style = "";
 })
+
 // Save Button on Click Event to save the buttons selected and the password picked
 document.getElementById('save').addEventListener('click', function () {
-  // Saves possibles to local Storage
+  // Saves possibles to local Storage 
   localStorage.setItem("possibles", possibles);
   // Save generated Password to localStorage 
   localStorage.setItem("save", pw);
@@ -88,6 +90,3 @@ document.getElementById('save').addEventListener('click', function () {
   localStorage.setItem("nouns", noun1);
   localStorage.setItem("verbs", verb1);
 });
-
-
-
