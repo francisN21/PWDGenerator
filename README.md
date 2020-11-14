@@ -1,6 +1,10 @@
 ### Personal Dashboard APP
 ```
 Coding bootcamp project completed with fellow zoom classmates.
+Archana and Delgadillo worked on the design.
+Sean figured out the APIs.
+Francisco helped on putting it all together.
+
 
 ```
 
@@ -24,7 +28,7 @@ You can even generate fun phrases using this password generator.
 ### DEMO
 ```
 
-![Code-Quiz Demo] (assets/demo/PWDGenerator.gif)
+![Code-Quiz Demo](./assets/demo/PWDGenerator.gif)
 
 Click me
 ```
