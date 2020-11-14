@@ -22,7 +22,7 @@ You can even generate fun phrases using this password generator.
 
 ### DEMO
 ```
-![](/PWDGeberator.gif)
+<img src="PWDGeberator.gif" width="128"/>/
 
 Click me
 ```
