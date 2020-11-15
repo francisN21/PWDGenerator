@@ -2,7 +2,7 @@
 function numEvent(){
     let pOut = `<button class="button is-small is-info is-rounded" id="numX">#</button>`;
     possibles.push(num);
-    console.log(possibles);
+    // console.log(possibles);
   
     document.getElementById("preset-Out").innerHTML += pOut;
     this.disabled = true;
@@ -13,7 +13,7 @@ function numEvent(){
 function emojiEvent(){
     let pOut = `<button class="button is-info is-small is-rounded" id="emojiX">:)</button>`;
     possibles.push(emojis);
-    console.log(possibles);
+    // console.log(possibles);
   
     document.getElementById("preset-Out").innerHTML += pOut;
     this.disabled = true;
@@ -24,7 +24,7 @@ function emojiEvent(){
 function specialEvent(){
     let pOut = `<button class="button is-info is-small is-rounded" id="special">-</button>`;
     possibles.push(specialChar);
-    console.log(possibles);
+    // console.log(possibles);
       
     document.getElementById("preset-Out").innerHTML += pOut;
     this.disabled = true;
@@ -54,7 +54,7 @@ function specialEvent(){
               return (response.json());
             })
             .then(function (dataWord) {
-              console.log(dataWord.word)
+              // console.log(dataWord.word)
               let randomW = dataWord.word;
               // converts to uppercase
               let upper = randomW[0].toUpperCase() + randomW.slice(1);
@@ -62,13 +62,13 @@ function specialEvent(){
               let combine = upper.split(' ');
               // pushes the words to the wordbank as one word
               wordBank.push(combine.join(''));
-              console.log(wordBank)
+              // console.log(wordBank)
             });
           }
         // pushes the bank to the generate array
         possibles.push(wordBank);
-        console.log(possibles);
-        console.log(wordBank);
+        // console.log(possibles);
+        // console.log(wordBank);
         };
     // random verb fetch
     function verbEvent(){
@@ -93,12 +93,12 @@ function specialEvent(){
                   let upper = randomV[0].toUpperCase() + randomV.slice(1);
                   let combine = upper.split(' ');
                   verbBank.push(combine.join(""));
-                  console.log(verbBank)
+                  // console.log(verbBank)
                 });
         }
         possibles.push(verbBank);
-        console.log(possibles);
-        console.log(verbBank);
+        // console.log(possibles);
+        // console.log(verbBank);
         };
     // random noun fetch
     function nounEvent(){
@@ -125,12 +125,12 @@ function specialEvent(){
                 let upper = randomN[0].toUpperCase() + randomN.slice(1);
                 let combine = upper.split(' ');
                 nounBank.push(combine.join(""));
-                console.log(nounBank)
+                // console.log(nounBank)
               });
             }
         possibles.push(nounBank);
-        console.log(possibles);
-        console.log(nounBank);
+        // console.log(possibles);
+        // console.log(nounBank);
         };
     // random adjective fetch
     function adjectiveEvent(){
@@ -157,10 +157,10 @@ function specialEvent(){
                 let upper = randomA[0].toUpperCase() + randomA.slice(1);
                 let combine = upper.split(' ');
                 adjBank.push(combine.join(""));
-                console.log(adjBank)
+                // console.log(adjBank)
             });
             }
             possibles.push(adjBank);
-            console.log(possibles);
-            console.log(adjBank);
+            // console.log(possibles);
+            // console.log(adjBank);
         };

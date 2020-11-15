@@ -21,13 +21,14 @@ document.getElementById('generate').addEventListener('click', function () {
   let ans = possibles;
 
 
-  console.log("Generated password: " + ans)
+  
   for (let x = 0; x < ans.length; x++) {
     let rand = Math.floor(Math.random() * ans[x].length);
     pw += possibles[x][rand];
-    console.log(possibles)
+    console.log("Chosen value per stack: " + possibles[x][rand])
   }
   document.getElementById("pwd").innerHTML = pw;
+  console.log("Generated password: " + pw)
 });
 
 // Clear Button on Click Event to clear the buttons selected and the password picked
