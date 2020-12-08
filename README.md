@@ -34,7 +34,6 @@ Photo by Damiano Lingauri on Unsplash
 
 ### Demo
 ```
-![PWD Demo]()
+![PWD Demo](assets/demo/PWD.gif)
 
-Click me
 ```
