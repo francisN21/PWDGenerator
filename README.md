@@ -5,6 +5,7 @@ Archana and Delgadillo worked on the design.
 Sean figured out the APIs.
 Francisco helped on putting it all together.
 
+License under [MIT License](License)
 
 ```
 
@@ -33,7 +34,7 @@ Photo by Damiano Lingauri on Unsplash
 
 ### Demo
 ```
-![PWD Demo](https://github.com/DaisyDelgadillo/PWDGenerator-1/blob/main/assets/demo/PWD.gif?raw=true)
+![PWD Demo]()
 
 Click me
 ```
