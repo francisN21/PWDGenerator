@@ -1,5 +1,5 @@
 ### Personal Dashboard APP
-```
+
 Coding bootcamp project completed with fellow zoom classmates.
 Archana and Delgadillo worked on the design.
 Sean figured out the APIs.
@@ -7,7 +7,7 @@ Francisco helped on putting it all together.
 
 License under [MIT License](License)
 
-```
+
 
 ### About
 ```
